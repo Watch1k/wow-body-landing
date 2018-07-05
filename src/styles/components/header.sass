@@ -1,0 +1,321 @@
+.header
+   $parent: &
+   position: fixed
+   top: 0
+   left: 0
+   right: 0
+   z-index: 300
+   transform: translate3d(0, -102%, 0)
+   transition: .3s ease-in-out
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11)
+   +xs
+      transform: translate3d(0, 0, 0)
+   &.no-transition
+      transition: none!important
+   &.is-visible
+      transform: translate3d(0, 0, 0)
+   &__inner
+      background-color: #47505c
+      .is-sub &
+         background-color: #b9c0cc
+         box-shadow: 0 2px 1px 0 rgba(255, 255, 255, 0.24)
+   &__container
+      position: relative
+      display: flex
+      align-items: center
+      padding: 20px 15px
+      +md
+         justify-content: space-between
+         max-width: 994px
+         padding: 18px 15px
+      +sm
+         padding: 14px 15px
+   
+   &__logo
+      position: relative
+      z-index: 101
+      flex: 0 0 160px
+      margin-right: 110px
+      height: 28px
+      +md
+         position: relative
+         left: 75px
+         margin-right: 0
+         margin-left: auto
+      +sm
+         left: auto
+         margin-right: auto
+      svg
+         width: 100%
+         height: 100%
+         fill: #fff
+         
+   &__nav
+      flex: 1 1 auto
+      +md
+         position: fixed
+         top: 0
+         left: 0
+         z-index: 100
+         right: 0
+         height: 100vh
+         flex: 0 1 auto
+         background: #47505c
+         transition: background-color .3s ease
+         overflow: hidden
+         text-align: center
+         transform: translateY(-100%)
+         .is-sub &
+            background-color: #b9c0cc
+      &-list
+         display: flex
+         +md
+            flex-direction: column
+            justify-content: center
+            margin-bottom: 60px
+         +xs
+            margin-bottom: 40px
+         li
+            +md
+               opacity: 0
+               transform: translateY(-20px)
+            &:not(:last-child)
+               margin-right: 28px
+               +md
+                  margin: 0 0 25px
+               +xs
+                  margin: 0 0 20px
+            a
+               position: relative
+               display: block
+               color: $white
+               +f('gil-700', 15, 28)
+               letter-spacing: 1.2px
+               text-transform: uppercase
+               transition: 0.3s
+               &::after
+                  position: absolute
+                  left: 50%
+                  right: 50%
+                  bottom: -25px
+                  z-index: 101
+                  display: block
+                  opacity: 0
+                  height: 3px
+                  background: #b9c0cc
+                  transition: .4s ease
+                  content: ''
+                  +md
+                     display: none
+               &:hover
+                  color: #b9c0cc
+                  &::after
+                     opacity: 1
+                     left: 0
+                     right: 0
+                     
+               .is-sub &:hover
+                  color: #47505c
+               .is-sub &:hover
+                  &::after
+                     background: #47505c
+      &-inner
+         +md
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            overflow: auto
+            margin-top: 68px
+            height: calc(100% - 68px)
+      &-mob-scroll
+         +md
+            padding: 30px 15px
+         +mob-fix
+            padding: 220px 15px 100px
+            
+   &__nav-toggle
+      display: none
+      position: relative
+      z-index: 101
+      width: 20px
+      height: 32px
+      border-radius: 3px
+      box-sizing: border-box
+      cursor: pointer
+      user-select: none
+      +md
+         display: block
+      &.is-active span
+         &:first-child
+            -webkit-transform: translateY(6px) rotate(45deg)
+            transform: translateY(6px) rotate(45deg)
+         &:nth-child(2)
+            opacity: 0
+         &:last-child
+            -webkit-transform: translateY(-6px) rotate(-45deg)
+            transform: translateY(-6px) rotate(-45deg)
+      span
+         display: block
+         background: #fff
+         width: 20px
+         height: 2px
+         border-radius: 3px
+         -webkit-transform-origin: center
+         transform-origin: center
+         transition: 0.3s ease
+         &:nth-child(2)
+            margin: 4px 0
+            
+   &__side
+      display: flex
+      align-items: center
+      +md
+         margin-left: auto
+      +sm
+         display: none
+      &-btn
+         padding: 13px 45px
+         font-size: 15px
+         letter-spacing: 1.2px
+         background: #fff
+         z-index: 100
+         span
+            color: #6d7178
+         .is-sub &
+            &::after, &::before
+               background: #47505c
+               content: ''
+            
+   &__lang
+      position: relative
+      z-index: 2
+      width: 80px
+      margin-left: 15px
+      margin-right: -5px
+      text-transform: uppercase
+      +md
+         display: none
+      &_mobile
+         display: none
+         margin: 30px auto 0
+         opacity: 0
+         transform: translateY(-50px)
+         +md
+            display: block
+         +xs
+            margin: 15px auto 0
+         .is-sub ul &
+            background-color: #b9c0cc
+   
+      &.is-active
+         ul
+            opacity: 1
+            pointer-events: auto
+            transform: scaleY(1)
+            li
+               opacity: 1
+         
+      > ul
+         position: relative
+         > li
+            +md
+               opacity: 1
+               transform: none
+            > a
+               pointer-events: none
+               position: relative
+               z-index: 1
+               +md
+                  pointer-events: auto
+               svg
+                  position: absolute
+                  top: 8px
+                  right: 7px
+                  width: 15px
+                  height: 10px
+                  fill: #fff
+                  transition: .3s ease
+            
+         ul
+            position: absolute
+            top: calc(100% - 33px)
+            left: 0
+            opacity: 0
+            pointer-events: none
+            transform: scaleY(0)
+            transform-origin: 30% 0
+            padding: 33px 0 10px
+            width: 100%
+            background: #47505c
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.11)
+            cursor: pointer
+            transition: .3s ease
+            +md
+               box-shadow: none
+            .is-sub &
+               background: #b9c0cc
+            li
+               padding-top: 10px
+            a
+               position: relative
+               display: block
+         a
+            display: block
+            position: relative
+            padding: 0 15px
+            +f('gil-700', 15)
+            color: #fff
+            letter-spacing: 1.5px
+            +md
+               padding: 0 10px
+            +trs
+            .no-touch &:hover
+               color: #b9c0cc
+            .is-sub.no-touch &:hover
+               color: #47505c
+               
+         .no-touch &:hover
+            svg
+               animation: arrDown .4s ease
+            ul
+               opacity: 1
+               pointer-events: auto
+               transform: scaleY(1)
+      &.is-active > ul
+         ul
+            opacity: 1
+            pointer-events: auto
+            
+   &__mob
+      &-actions
+         display: none
+         +md
+            display: block
+      &-btn
+         display: none
+         opacity: 0
+         transform: translateY(-50px)
+         min-width: 198px
+         +sm
+            display: inline-block
+         span
+            color: #6d7178
+            
+   &__line
+      display: none
+      position: absolute
+      top: 100%
+      height: 1px
+      background: $white
+      z-index: 100
+      +md
+         display: block
+      &_l
+         left: 15px
+         +xs
+            left: 0
+      &_r
+         right: 15px
+         +xs
+            right: 0

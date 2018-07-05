@@ -1,0 +1,214 @@
+.shop
+   position: relative
+   display: flex
+   align-items: flex-end
+   height: 1024px
+   +xs
+      height: 568px
+      
+   &__bg
+      max-width: 1920px
+      width: 100%
+      margin: 0 auto
+      transform: translateY(150px)
+      +coverdiv
+      +cover
+      
+   &__container
+      z-index: 2
+      padding: 0 15px 140px
+      pointer-events: none
+      +xs
+         width: 100%
+         height: 100%
+         padding: 0 12px
+   &__text
+      text-align: center
+      color: #fff
+      +xs
+         position: absolute
+         left: 0
+         right: 0
+         bottom: 0
+         padding-bottom: 95px
+         background-image: linear-gradient(to bottom, rgba(71, 80, 92, 0), #333941)
+   &__title
+      font-size: 130px
+      line-height: 105px
+      margin-bottom: 15px
+      +xs
+         margin: 0 -15px 27px
+   &__descr
+      max-width: 570px
+      margin: 0 auto
+      +f('gil-50', 20, 26)
+      +xs
+         padding: 0 6px
+         font-size: 18px
+         line-height: 22px
+      br
+         +xs
+            display: none
+   &__content
+      max-width: 1920px
+      width: 100%
+      margin: 0 auto
+      z-index: 3
+      +coverdiv
+   &__item
+      $parent: &
+      position: absolute
+      z-index: 1
+      +xs
+         display: none
+      &_1
+         top: 28%
+         left: 72.5%
+         +lg
+            top: 31%
+         +md
+            left: 80%
+         +sm
+            left: 92.5%
+      &_2
+         top: 52%
+         left: 37%
+         +md
+            left: 30%
+         +sm
+            left: 25%
+      &_3
+         top: 46%
+         left: 29%
+         +md
+            left: 20%
+         +sm
+            left: 10%
+      &_4
+         top: 93%
+         left: 75%
+         +lg
+            top: 85%
+            left: 77%
+         +md
+            top: 87%
+            left: 70%
+         +sm
+            left: 73%
+      &_5
+         top: 49%
+         left: 58.3%
+         +md
+            left: 62.3%
+         +sm
+            left: 66.3%
+      &_6
+         top: 62%
+         left: 46%
+         +md
+            left: 40%
+      &_7
+         top: 53%
+         left: 70%
+         +md
+            left: 78%
+         +sm
+            left: 86%
+      &_8
+         top: 43%
+         left: 45%
+         +md
+            left: 42%
+         +sm
+            left: 40%
+   
+      &-btn
+         position: relative
+         z-index: 2
+         display: flex
+         align-items: center
+         justify-content: center
+         width: 42px
+         height: 42px
+         border-radius: 50%
+         background: #fff
+         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13)
+         font-size: 0
+         line-height: 0
+         &::after
+            content: ''
+            position: absolute
+            display: block
+            border: 1px solid #fff
+            left: 50%
+            top: 50%
+            width: 100%
+            height: 100%
+            opacity: 0
+            -webkit-border-radius: 50%
+            border-radius: 50%
+            transform: translate(-50%, -50%) scale(1.8)
+            animation: pulse-btn 1.5s infinite forwards
+            pointer-events: none
+            .is-active &
+               animation: none
+         &-icon
+            width: 14px
+            height: 14px
+            
+      &-popup
+         overflow: hidden
+         position: absolute
+         bottom: 100%
+         left: 50%
+         max-height: 18px
+         width: 20px
+         opacity: 0
+         margin-bottom: -21px
+         transform: translateX(-50%)
+         font-size: 0
+         background: #fff
+         &-inner
+            display: flex
+            align-items: flex-start
+            padding: 15px 20px 30px
+         &_left
+            +sm
+               top: 50%
+               bottom: auto
+               transform: translate(0, -50%)
+               left: auto
+               right: calc(100% - 20px)
+               margin-bottom: 0
+         &_right
+            +sm
+               top: 50%
+               bottom: auto
+               transform: translate(0, -50%)
+               right: auto
+               left: calc(100% - 20px)
+               margin-bottom: 0
+               
+      &-img-wrap
+         flex: 1 1 auto
+      &-info
+         flex-grow: 1
+         padding-left: 15px
+         font-size: 16px
+         line-height: 22px
+      &-descr
+         margin-bottom: 10px
+      &-price
+         +f('gil-700')
+         
+   &__go-link
+      position: absolute
+      bottom: 70px
+      left: 50%
+      z-index: 10
+      opacity: 0
+      margin-left: -140px
+      transform: translateY(50px)
+      +xs
+         margin-left: -105px
+         bottom: 35px

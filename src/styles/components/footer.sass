@@ -1,0 +1,200 @@
+.footer
+   overflow: hidden
+   margin: auto auto 0 auto
+   width: 100%
+   padding: 60px 0 37px
+   background: #47505c
+   text-align: center
+   color: $white
+   font-size: 16px
+   letter-spacing: 1px
+   +sm
+      padding: 55px 0 50px
+   +xs
+      padding: 62px 0
+   .is-sub &
+      padding: 80px 0 37px
+   a
+      transition: .3s ease
+      //+sm
+         font-size: 14px
+      +xs
+         font-size: 12px
+         
+      &:hover
+         color: #b6bcc8
+   
+   &__container
+      max-width: 1330px
+   
+   &__nav
+      opacity: 0
+      transform: translateY(50px)
+      margin-bottom: 45px
+      +sm
+         margin-bottom: 25px
+      +xs
+         display: none
+      ul
+         display: flex
+         justify-content: center
+         li
+            margin: 0 25px
+            +sm
+               margin: 0 17px
+            &.is-active
+               a
+                  color: $white
+                  &::after
+                     left: 0
+                     right: 0
+            
+            a
+               position: relative
+               display: block
+               +f('gil-700', 16)
+               color: #b6bcc8
+               text-transform: uppercase
+               transition: 0.3s
+               &::after
+                  position: absolute
+                  left: 50%
+                  right: 50%
+                  bottom: -5px
+                  z-index: 1
+                  display: block
+                  height: 2px
+                  background: #fff
+                  transition: 0.3s
+                  content: ''
+               &:hover
+                  color: #fff
+                  &::after
+                     left: 0
+                     right: 0
+               
+   &__programs
+      margin-bottom: 70px
+      +sm
+         margin-bottom: 50px
+      +xs
+         margin-bottom: 34px
+      &-title
+         margin-bottom: 24px
+         opacity: 0
+         transform: translateY(50px)
+         font-size: 16px
+         letter-spacing: 1px
+         +sm
+            margin-bottom: 47px
+         +xs
+            margin-bottom: 26px
+         span
+            +xs
+               display: none
+         
+      &-links
+         display: flex
+         align-items: center
+         justify-content: center
+         padding-left: 30px
+         line-height: 0
+         opacity: 0
+         transform: translateY(50px)
+         +sm
+            flex-wrap: wrap
+            padding-left: 0
+            max-width: 550px
+            margin: 0 auto
+         +xs
+            flex-direction: column
+         a
+            display: block
+            margin: 0 15px
+            +sm
+               margin: 0 15px 25px
+            +xs
+               margin: 0
+               
+            &:not(:last-child)
+               +xs
+                  margin-bottom: 35px
+            &:hover
+               .icon-wow-mom
+                  .for-fill
+                     fill: #f6b0cc
+               .icon-wow-slim
+                  .for-fill
+                     fill: #fd3573
+               .icon-wow-strong
+                  .for-fill
+                     fill: #9fc851
+               .icon-wow-men
+                  .for-fill
+                     fill: #242a2f
+               .icon-wow-heavy
+                  .for-fill
+                     fill: #a8dcbf
+                     
+            svg
+               .for-fill
+                  fill: #fff
+                  transition: .3s ease
+            
+   &__bottom
+      display: flex
+      justify-content: space-between
+      color: $white
+      +sm
+         flex-direction: column
+         align-items: center
+      &-info
+         display: flex
+         opacity: 0
+         transform: translateX(-50px)
+         +sm
+            margin-bottom: 30px
+            margin-left: -70px
+         +xs
+            flex-direction: column
+            margin-left: 0
+            
+         > p
+            margin-right: 25px
+            +sm
+               margin-right: 30px
+            +xs
+               font-size: 12px
+               margin: 0
+            
+      &-contact
+         display: flex
+         padding-right: 13px
+         opacity: 0
+         transform: translateX(50px)
+         +sm
+            padding-right: 0
+            flex-direction: column
+            align-items: center
+         +xs
+            order: -1
+            margin-bottom: 38px
+         > a
+            +xs
+               margin-bottom: 15px
+            
+   &__socials
+      margin-left: 47px
+      +sm
+         margin-left: 0
+         margin-top: 25px
+      +xs
+         margin-left: 0
+         flex: 0 1 auto
+         
+   &__mob-link
+      display: none
+      +xs
+         display: inline-block
+         margin-top: 3px
+         

@@ -1,0 +1,277 @@
+// basic styles
+body
+   display: flex
+   flex-direction: column
+   min-height: 100vh
+   min-width: 320px
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   +f('gil-400', 18, 26)
+   color: #47505c
+   
+   &.is-locked
+      overflow: hidden !important
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 100%
+
+.content
+   overflow: hidden
+   &[data-page='home']
+      +xs
+         display: flex
+         flex-direction: column
+         
+   .is-sub &
+      padding-top: 80px
+      +sm
+         padding-top: 60px
+
+.container
+   position: relative
+   max-width: 1230px
+   padding: 0 15px
+   margin: 0 auto
+
+.title-lg
+   +f('gil-900', 200, 200)
+   text-transform: uppercase
+   color: #fff
+   +xs
+      font-size: 60px
+      line-height: 60px
+
+.title-md
+   +f('gil-500', 36, 40)
+   text-align: center
+   letter-spacing: 1px
+   text-transform: uppercase
+   color: #47505c
+
+.title-xs
+   +f('gil-700', 16)
+   letter-spacing: 1.2px
+   text-transform: uppercase
+   color: #47505c
+
+.back-title
+   position: absolute
+   left: 50%
+   opacity: 0
+   transform: translateX(-50%) translateY(50px)
+   color: rgba(#47505c, .03)
+   pointer-events: none
+   +f('gil-900', 250, 170)
+   white-space: nowrap
+   +xs
+      display: none
+
+.arrow-link
+   display: inline-flex
+   align-items: center
+   +f('gil-700', 12)
+   letter-spacing: 1px
+   text-transform: uppercase
+   color: #fff
+   
+   span, .for-fill, .for-stroke
+      transition: .3s ease
+   
+   .no-touch &:hover
+      span
+         color: #47505c
+      svg
+         .for-fill
+            fill: #47505c
+         .for-stroke
+            stroke: #47505c
+   
+   &_arr-r
+      span
+         margin-right: 14px
+      svg
+         .for-fill
+            fill: #fff
+         .for-stroke
+            stroke: #fff
+      
+      .no-touch &:hover
+         svg
+            animation: arrRight .3s .3s ease
+   
+   &_arr-l
+      span
+         margin-left: 14px
+      svg
+         .for-fill
+            fill: #B9C0CC
+         .for-stroke
+            stroke: #B9C0CC
+      
+      .no-touch &:hover
+         svg
+            animation: arrLeft .3s .3s ease
+
+.btn
+   position: relative
+   display: inline-block
+   padding: 20px
+   text-align: center
+   outline: 0
+   line-height: 1
+   cursor: pointer
+   +f('gil-700', 13)
+   letter-spacing: 1px
+   text-transform: uppercase
+   border-radius: 26px
+   overflow: hidden
+   backface-visibility: hidden
+   .no-touch &:hover
+      transition: background .2s .2s
+      span
+         color: #fff
+         +gpu
+   
+   &::before, &::after
+      content: ''
+      display: inline-block
+      position: absolute
+      width: 75%
+      height: 200px
+      border-radius: 50%
+      z-index: 0
+      backface-visibility: hidden
+      transform: translate3d(0, 0, 0)
+      transition: transform 0.7s
+   
+   &::before
+      left: -15%
+      bottom: 101%
+   &::after
+      right: -15%
+      top: 101%
+   span
+      position: relative
+      z-index: 1
+      transition: color 0.6s, opacity 0.6s
+      color: #fff
+   
+   .no-touch &:hover
+      &::before
+         transform: translate3d(0, 75px, 0)
+      &::after
+         transform: translate3d(0, -75px, 0)
+   
+   &_md
+      min-width: 280px
+      +xs
+         padding: 15px 10px
+         min-width: 210px
+         font-size: 11px
+         letter-spacing: .8px
+   &_lg
+      min-width: 320px
+      +xs
+         padding: 15px 10px
+         min-width: 210px
+         font-size: 11px
+         letter-spacing: .8px
+   
+   &_white
+      background: #fff
+      &::before, &::after
+         background-color: #47505c
+      span
+         color: #6d7178
+   &_white-2
+      background: #fff
+      &::before, &::after
+         background-color: #b9c0cc
+      span
+         color: #fff
+   
+   &_blue
+      background-color: #5d82b9
+      &::before, &::after
+         background-color: darken(#5d82b9, 15)
+   &_pink
+      background-color: #f7b1ce
+      &::before, &::after
+         background-color: #e65588
+   &_pink-2
+      background-color: #e65588
+      &::before, &::after
+         background-color: darken(#e65588, 15)
+   &_orange
+      background-color: #ff9924
+      &::before, &::after
+         background-color: darken(#ff9924, 10)
+   &_green
+      background-color: #537161
+      &::before, &::after
+         background-color: #a8e1c2
+      .no-touch &:hover
+         span
+            color: #537161
+   &_red
+      background-color: #bf392c
+      &::before, &::after
+         background-color: darken(#bf392c, 10)
+   &_purple
+      background-color: #6a679c
+      &::before, &::after
+         background-color: #a4a1d6
+         
+   &__mob-hidden-text
+      +xs
+         display: none
+
+.add-file-btn
+   display: inline-flex
+   align-items: center
+   +f('gil-600', 16, 24)
+   color: #f7b1ce
+   cursor: pointer
+   +trs
+   &:hover
+      color: #e65588
+      svg
+         fill: #e65588
+   svg
+      width: 17px
+      height: 20px
+      margin-right: 14px
+      fill: #f7b1ce
+      +trs
+   input
+      display: none
+
+.event-label
+   display: inline-flex
+   padding: 4px 8px
+   +f('gil-700', 13)
+   line-height: 1
+   letter-spacing: 1px
+   text-transform: uppercase
+   color: #fff
+   border-radius: 10px
+   &_1
+      background-color: #f7b1ce
+   &_2
+      background-color: #e65588
+   &_3
+      background-color: #537161
+   &_4
+      background-color: #b5e07b
+
+.decor-mask
+   position: absolute
+   top: 0
+   left: auto
+   right: 0
+   bottom: 0
+   z-index: 10
+   width: 100%
+   background-color: #fff

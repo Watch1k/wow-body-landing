@@ -1,0 +1,163 @@
+.popup
+  $parent: &
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  visibility: hidden
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+  z-index: 1300
+  overflow: auto
+  outline: 0
+  text-align: center
+  font-size: 0
+  transform: translate3d(0, 0, 0)
+  background-color: rgba(#47505c, .8)
+  transition: opacity .3s ease, transform .5s ease, visibility .5s
+  will-change: opacity, transform
+  &:after
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    width: 0
+    height: 100%
+    //+md
+    //  display: none
+    
+  &.opened
+    opacity: 1
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    visibility: visible
+  &__close
+    position: absolute
+    top: 26px
+    right: 26px
+    width: 20px
+    height: 20px
+    cursor: pointer
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 0
+    +xs
+      top: 10px
+      right: 12px
+    &:hover svg
+      fill: #000
+    svg
+      fill: #373839
+      +trs
+      
+  &__container
+    display: inline-block
+    vertical-align: middle
+    max-width: 960px
+    width: 100%
+    position: relative
+    margin: 30px auto
+    transition: opacity .5s ease, transform .5s ease
+    transform: translate3d(0, -100px, 0)
+    will-change: transform, opacity
+    background: $white
+    text-align: left
+    box-shadow: 0 0 15px rgba($black, .2)
+    +sm
+      max-width: 700px
+    +xs
+      margin: 0
+    +mob-fix
+      padding: 100px 4px 100px 14px
+    #{$parent}_sm &
+      max-width: 720px
+      
+body.popup-opened
+  overflow: hidden
+  //+md
+  //  position: fixed
+  //  height: 100%
+  
+  //@media only screen and (min-width: 767px) and (max-width: 1199px)
+    position: fixed
+    height: 100%
+
+.popup.opened .popup__container
+  -webkit-transform: translate3d(0, 0, 0)
+  -moz-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+  
+// popups
+.connect
+  display: flex
+  &__img-wrap
+    flex: 0 1 50%
+    +cover-img
+    +sm
+      flex: 0 1 40%
+    +xs
+      display: none
+  &__content
+    flex: 0 1 50%
+    padding: 62px 40px 15px
+    text-align: center
+    +sm
+      flex: 1 0 50%
+      padding: 50px 20px 15px
+      +xs
+        padding: 50px 10px 15px
+  &__text
+    padding: 0 10px
+    margin-bottom: 40px
+    +sm
+      margin-bottom: 30px
+      padding: 0
+  &__title
+    margin-bottom: 20px
+    +f('gil-500', 24, 24)
+    letter-spacing: 0.7px
+    text-transform: uppercase
+  &__descr
+    font-size: 16px
+    line-height: 24px
+    +xs
+      font-size: 14px
+      line-height: 22px
+  &__form
+    text-align: center
+    &-upload
+      margin-top: 5px
+      padding-left: 10px
+    &-submit-btn
+      min-width: 138px
+    &-submit-wrap
+      margin-top: -10px
+      &_default
+        margin-top: 50px
+        +xs
+          margin-top: 30px
+
+.inform
+  max-width: 460px
+  margin: 0 auto
+  padding: 55px 0 65px
+  text-align: center
+  +xs
+    padding: 50px 10px 40px
+  &__content
+    margin: 0 0 30px
+    font-size: 18px
+    line-height: 26px
+    letter-spacing: 1px
+    +xs
+      font-size: 14px
+      line-height: 22px
+  &__form
+    line-height: 0
+    &-group
+      width: 390px
+      margin: 0 auto 35px
+      +xs
+        width: 290px
+        margin:  0 auto 30px

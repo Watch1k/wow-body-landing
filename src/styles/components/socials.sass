@@ -1,0 +1,54 @@
+.socials
+  $parent: &
+  display: flex
+  a
+    display: flex
+    align-items: center
+    justify-content: center
+    line-height: 1
+    transition: .4s ease-in-out
+    &:not(:last-child)
+      margin-right: 19px
+      
+    &:hover .socials__icon
+      .for-fill
+        stroke: #7e8ba1
+      
+  &__icon
+    height: 20px
+    stroke: $white
+    .for-fill
+      transition: .3s ease
+      
+  &_white
+    a
+      .for-fill
+        stroke: #fff
+  &_grey
+    a .for-fill
+      stroke: #b9c0cc
+      
+.share
+  display: flex
+  align-items: center
+  line-height: 0
+  &__title
+    margin-right: 20px
+    +f('gil-700', 12, 26)
+    letter-spacing: 1px
+    text-transform: uppercase
+    color: #b9c0cc
+  a
+    width: 50px
+    height: 50px
+    overflow: hidden
+    border-radius: 50%
+    &:not(:last-child)
+      margin-right: 10px
+    svg
+      .for-fill
+        transition: fill .3s ease
+        fill: #F7B1CE
+    &:hover
+      .for-fill
+        fill: #e65588

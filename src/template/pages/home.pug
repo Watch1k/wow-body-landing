@@ -1,0 +1,485 @@
+extends ../extend/default
+
+block variables
+	- var title = 'Home page';
+
+block main
+	main.content(data-page='home')
+
+		//begin programs
+		+b.SECTION.programs#programs
+
+			+b.program-card._mom.is-disabled
+				+e.mask.decor-mask
+				+e.inner
+					+e.IMG.img(src='static/img/bg/product_mom.png' alt='image')
+					+e.back-title MOM
+					+e.content
+						+e.A.logo-link(href='#!')
+							+e.IMG(src='static/img/logo/wow-mom.png' width='216' height='25' alt='image')
+						p Твой гид по здоровой и красивой беременности!
+					+social('_white program-card__socials', 'fb', 'inst')
+				+e.info
+					+e.info-content
+						p Твой гид по здоровой и красивой беременности!
+						+e.info-data
+							+e.info-data-item
+								span 1
+								p семестр
+							+e.info-data-item
+								span 242
+								p упражнения
+							+e.info-data-item
+								span 459
+								p рецептов
+							+e.info-data-item
+								span ₴494
+								p стоимость
+
+						+e.A.info-btn.btn._lg._blue(href='#!')
+							span УЗНАТЬ БОЛЬШЕ О ПРОГРАММЕ
+
+			+b.program-card._slim.is-disabled
+				+e.mask.decor-mask
+				+e.inner
+					+e.IMG.img(src='static/img/bg/product_slim.png' alt='image')
+					+e.back-title SLIM
+					+e.content
+						+e.A.logo-link(href='#!')
+							+e.IMG(src='static/img/logo/wow-slim.png' width='212' height='25' alt='image')
+						p Тренировки, питание,  советы и мотивация. 84 дня новой жизни.
+					+social('_white program-card__socials', 'fb', 'inst')
+				+e.info
+					+e.info-content
+						p Тренировки, питание,  советы и мотивация. 84 дня новой жизни.
+
+						+e.info-data
+							+e.info-data-item
+								span 12
+								p недель
+							+e.info-data-item
+								span 242
+								p упражнения
+							+e.info-data-item
+								span 459
+								p рецептов
+							+e.info-data-item
+								span €84
+								p стоимость
+
+						+e.A.info-btn.btn._lg._pink-2(href='#!')
+							span УЗНАТЬ БОЛЬШЕ О ПРОГРАММЕ
+
+			+b.program-card._strong.is-disabled
+				+e.mask.decor-mask
+				+e.inner
+					+e.IMG.img(src='static/img/bg/product_strong.png' alt='image')
+					+e.back-title STRONG
+					+e.content
+						+e.A.logo-link(href='#!')
+							+e.IMG(src='static/img/logo/wow-strong.png' width='244' height='25' alt='image')
+						p Cоздание рельефного тела, плоского живота и тонкой талии
+					+social('_white program-card__socials', 'fb', 'inst')
+				+e.info
+					+e.info-content
+						p Cоздание рельефного тела, плоского живота и тонкой талии
+
+						+e.info-data
+							+e.info-data-item
+								span 4
+								p недели
+							+e.info-data-item
+								span 242
+								p упражнения
+							+e.info-data-item
+								span 459
+								p рецептов
+							+e.info-data-item
+								span €14
+								p стоимость
+
+						+e.A.info-btn.btn._lg._orange(href='#!')
+							span УЗНАТЬ БОЛЬШЕ О ПРОГРАММЕ
+
+			+b.program-card._heavy.is-disabled
+				+e.mask.decor-mask
+				+e.inner
+					+e.IMG.img(src='static/img/bg/product_heavy.png' alt='image')
+					+e.back-title HEAVY
+					+e.content
+						+e.A.logo-link(href='#!')
+							+e.IMG(src='static/img/logo/wow-heavy.png' width='211' height='24' alt='image')
+						p Продвинутый уровень для сильных телом и духом.
+					+social('_white program-card__socials', 'fb', 'inst')
+				+e.info
+					+e.info-content
+						p Продвинутый уровень для сильных телом и духом.
+
+						+e.info-data
+							+e.info-data-item
+								span 4
+								p недели
+							+e.info-data-item
+								span 242
+								p упражнения
+							+e.info-data-item
+								span 459
+								p рецептов
+							+e.info-data-item
+								span €15
+								p стоимость
+
+						+e.A.info-btn.btn._lg._green(href='#!')
+							span УЗНАТЬ БОЛЬШЕ О ПРОГРАММЕ
+
+			+b.program-card._men.is-disabled
+				+e.mask.decor-mask
+				+e.inner
+					+e.IMG.img(src='static/img/bg/product_men.png' alt='image')
+					+e.back-title MEN
+					+e.content
+						+e.A.logo-link(href='#!')
+							+e.IMG(src='static/img/logo/wow-men.png' width='201' height='25' alt='image')
+						p Домашний фитнес для мужчин – твой путь к супертелу
+					+social('_white program-card__socials', 'fb', 'inst')
+				+e.info
+					+e.info-content
+						p Домашний фитнес для мужчин – твой путь к супертелу
+						+e.info-data
+							+e.info-data-item
+								span 12
+								p недель
+							+e.info-data-item
+								span 242
+								p упражнения
+							+e.info-data-item
+								span 459
+								p рецептов
+							+e.info-data-item
+								span €59
+								p стоимость
+
+						+e.A.info-btn.btn._lg._red(href='#!')
+							span УЗНАТЬ БОЛЬШЕ О ПРОГРАММЕ
+
+			+b.program-card._yoga.is-disabled
+				+e.mask.decor-mask
+				+e.inner
+					+e.IMG.img(src='static/img/bg/product_yoga.png' alt='image')
+					+e.back-title YOGA
+					+e.content
+						+e.A.logo-link.is-disabled(href='#!')
+							+e.IMG(src='static/img/logo/wow-yoga.png' width='216' height='25' alt='image')
+						+e.A.btn.btn._md._white(data-popup-target='inform-popup' href='#!')
+							span сообщить о запуске
+					+social('_white program-card__socials', 'fb', 'inst')
+
+			//Плитки могут создаваться/скрываться. При нечетном кол-ве - остается пустой квадрат справа
+			//<div class="program-card program-card_empty"></div>
+		//end programs
+
+		//begin about
+		+b.SECTION.about#about(style='background-image: url(static/img/bg/about_bg.jpg)' data-anim="bg")
+			+e.container.container
+				+e.content(data-anim-stagger='fade-y')
+					+e.content-title.title-lg
+						h2 WOWBODY
+					+e.content-descr
+						p Это движение за красивый, здоровый и вкусный образ жизни. Тренируй тело, внедряй новые привычки, полезно питайся
+							br
+							| и классно готовь. Стань wooow во всех направлениях.
+
+					+e.A.more-btn.btn._md._white(href='#!')
+						span подробнее о нас
+		//end about
+
+		//begin events
+		+b.SECTION.events#events
+			+e.container.container
+				+e.back-title.back-title
+					h3 EVENTS
+				+e.top-text(data-anim-stagger='fade-y')
+					+e.title.title-md
+						h2 СОБЫТИЯ
+					+e.descr
+						p Мы организуем много воркшопов, фитнес-туров и вебинаров, чтобы ты могла развивать не только свое тело, а и развиваться как личность. Выбирай свои события и скорее записывайся.
+
+				+e.tabs.c-tabs
+					.c-tabs__nav
+						-
+							tabsList = ['Все события', 'Fitness camp', 'вебинары', 'семинары', 'новости']
+						-activeIndex = 0
+						for tabsText, index in tabsList
+							button.c-tabs__btn(class= index === activeIndex ? 'is-active' : '' type='button')= tabsText
+								.
+									<svg class='c-tabs__btn-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									width="444.819px" height="444.819px" viewBox="0 0 444.819 444.819" style="enable-background:new 0 0 444.819 444.819;"
+									xml:space="preserve" >
+									<path d="M434.252,114.203l-21.409-21.416c-7.419-7.04-16.084-10.561-25.975-10.561c-10.095,0-18.657,3.521-25.7,10.561
+									L222.41,231.549L83.653,92.791c-7.042-7.04-15.606-10.561-25.697-10.561c-9.896,0-18.559,3.521-25.979,10.561l-21.128,21.416
+									C3.615,121.436,0,130.099,0,140.188c0,10.277,3.619,18.842,10.848,25.693l185.864,185.865c6.855,7.23,15.416,10.848,25.697,10.848
+									c10.088,0,18.75-3.617,25.977-10.848l185.865-185.865c7.043-7.044,10.567-15.608,10.567-25.693
+									C444.819,130.287,441.295,121.629,434.252,114.203z"/>
+									</svg>
+
+					.c-tabs__for
+
+						mixin eventsItem(item)
+							+e.item(class= item.classMod)
+								+e.item-label(class= item.labelMod || '' class= `event-label ${item.labelClass}`)
+									span= item.label
+								if item.author
+									+e.item-author
+										+e.item-author-img
+											+e.IMG(src=`static/img/content/${item.author.img}.jpg` alt='image')
+										+e.item-author-text
+											each text in item.author.text
+												p= text
+								else
+									+e.item-img
+										+e.IMG(src=`static/img/content/${item.img}.jpg` alt='image')
+								+e.item-text
+									+e.item-descr
+										p= item.descr
+									+e.item-info
+										+e.item-info-el
+											svg(width='18px' height='18px' viewbox='0 0 18 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+												g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd')
+													g(transform='translate(-151.000000, -2720.000000)' fill='#D3D3D3' fill-rule='nonzero')
+														g(transform='translate(-852.000000, 1134.000000)')
+															g(transform='translate(972.000000, 1364.000000)')
+																g#noun_633647_cc(transform='translate(31.000000, 222.000000)')
+																	g
+																		path#Shape(d='M9,0 C4.02,0 0,4.02 0,9 C0,13.98 4.02,18 9,18 C13.98,18 18,13.98 18,9 C18,4.02 13.98,0 9,0 Z M12.42,12.48 C12.3,12.6 12.14,12.66 12,12.66 C11.86,12.66 11.7,12.6 11.58,12.48 L8.34,9.24 L8.34,3.96 C8.34,3.62 8.6,3.36 8.94,3.36 C9.28,3.36 9.54,3.62 9.54,3.96 L9.54,8.74 L12.42,11.62 C12.66,11.88 12.66,12.26 12.42,12.48 Z')
+											span= item.date
+											if item.dateSecond
+												span= item.dateSecond
+
+										+e.item-info-el
+											svg(width='14px' height='19px' viewbox='0 0 14 19' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+												g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd')
+													g(fill='#D3D3D3' fill-rule='nonzero')
+														path(d='M7,0 C3.13403326,0 0,3.13397236 0,7 C0,13.0000005 7,18.375 7,18.375 C7,18.375 14,13.0000005 14,7 C14,3.13397236 10.8659663,0 7,0 Z M7,10.5 C5.06699594,10.5 3.5,8.93300406 3.5,7 C3.5,5.06699594 5.06699594,3.5 7,3.5 C8.93300406,3.5 10.5,5.06699638 10.5,7 C10.5,8.93300362 8.93300406,10.5 7,10.5 Z')
+											span= item.place
+									if item.actLink
+										+e.item-action
+											+e.A(href='#!')= item.actLink
+
+						-n = 0
+						while n < 5
+							.c-tabs__tab
+								+e.tabs-inner
+									+e.grid-sizer
+									-
+										eventsList = [{
+										label: 'FITNESS CAMP',
+										labelClass: '_2',
+										img: 'event_img',
+										descr: '7-дневный фитнес лагерь в Греции с Анитой и Юлей',
+										date: '18.05.2018 – 25.05.2018',
+										place: 'Греция',
+										actLink: '1300 EUR — купить билет'
+										}, {
+										label: 'СЕМИНАР',
+										labelClass: '_1',
+										author: {
+										img: 'event_author',
+										text: ['Ведет', 'Татьяна Морозова']
+										},
+										descr: 'Аюрведа и Хатха-Йога, как инструмент решения любых проблем тела и ума.',
+										date: '13.05',
+										dateSecond: '19:00',
+										place: 'Кировоград',
+										actLink: 'Зарегистрироваться'
+										}, {
+										label: 'FITNESS CAMP',
+										labelClass: '_2',
+										img: 'event_img',
+										descr: '7-дневный фитнес лагерь в Греции с Анитой и Юлей',
+										date: '18.05.2018 – 25.05.2018',
+										place: 'Греция',
+										actLink: '1300 EUR — купить билет'
+										}, {
+										label: 'НОВОСТЬ',
+										labelClass: '_3',
+										img: 'event_img',
+										descr: 'Презентация программы WOWBODY slim',
+										date: '13.05 19:00',
+										place: 'Новоград-Волынский'
+										}, {
+										label: 'НОВОСТЬ',
+										labelClass: '_3',
+										img: 'event_img',
+										descr: 'Презентация программы WOWBODY slim',
+										date: '13.05 19:00',
+										place: 'Новоград-Волынский'
+										}, {
+										label: 'ВЕБИНАР',
+										labelClass: '_4',
+										author: {
+										img: 'event_author',
+										text: ['Ведет', 'Татьяна Морозова']
+										},
+										descr: 'Аюрведа и Хатха-Йога, как инструмент решения любых проблем тела и ума.',
+										date: '13.05 19:00',
+										place: 'Кировоград',
+										actLink: '350 грн — Зарегистрироваться'
+										}, {
+										classMod: 'is-hidden',
+										label: 'НОВОСТЬ',
+										labelClass: '_3',
+										img: 'event_img',
+										descr: 'Презентация программы WOWBODY slim',
+										date: '13.05 19:00',
+										place: 'Новоград-Волынский'
+										}, {
+										classMod: 'is-hidden',
+										label: 'FITNESS CAMP',
+										labelClass: '_2',
+										img: 'event_img',
+										descr: '7-дневный фитнес лагерь в Греции с Анитой и Юлей',
+										date: '18.05.2018 – 25.05.2018',
+										place: 'Греция',
+										actLink: '1300 EUR — купить билет'
+										}, {
+										classMod: 'is-hidden',
+										label: 'СЕМИНАР',
+										labelClass: '_1',
+										author: {
+										img: 'event_author',
+										text: ['Ведет', 'Татьяна Морозова']
+										},
+										descr: 'Аюрведа и Хатха-Йога, как инструмент решения любых проблем тела и ума.',
+										date: '13.05 19:00',
+										place: 'Кировоград',
+										actLink: 'Зарегистрироваться'
+										}]
+
+									each item in eventsList
+										+eventsItem(item)
+
+								+e.more(data-anim= `${n === 0 ? 'fade-y' : ''}`)
+									+e.BUTTON.more-btn.btn._lg._pink(type='button')
+										span.btn__mob-hidden-text загрузить
+										span больше новостей
+							-n++
+
+		//end events
+
+		//begin team
+		+b.SECTION.team#team
+			+e.container.container
+				+e.top-text(data-anim='fade-y' data-anim-duration='1.2')
+					+e.title.title-md
+						h2 КОМАНДА
+					+e.descr
+						p Мы собрали лучших, чтобы осуществить твою мечту и обрести WOW-тело. Наши специалисты проводят онлайн-консультации и готовы прийти на помощь в любых вопросах.
+
+				+e.list
+					+e.person._left(data-anim='fade-x' data-anim-duration='1.2')
+						+e.person-data
+							+e.person-name
+								h5 Анита Луценко
+							+e.person-descr
+								p Звездный тренер, эксперт по похудению
+							+social('_grey team__person-socials', 'fb', 'inst')
+						+e.person-img
+							+e.IMG(src=`static/img/content/team_anita.jpg` alt='image')
+
+					+e.person._right(data-anim='fade-x' data-anim-duration='1.2')
+						+e.person-img
+							+e.IMG(src=`static/img/content/team_julia.jpg` alt='image')
+						+e.person-data
+							+e.person-name
+								h5 Юлия Богдан
+							+e.person-descr
+								p Тренер, эксперт здорового образа жизни
+							+social('_grey team__person-socials', 'fb', 'inst')
+
+				+e.squad(data-anim-stagger='fade-y' data-stagger-delay='.3')
+					+e.squad-title.title-xs
+						h4 эксперты, которые проводят консультации
+
+					+e.squad-list.slider
+						-
+							squadList = [{
+							img: 2,
+							name: 'Ольга Черняк',
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							}, {
+							img: 1,
+							name: 'Татьяна Приходько',
+							descr: 'Инструктор тренажерного зала, групповых программ и детского фитнеса'
+							}, {
+							img: 3,
+							name: 'Ольга Черняк',
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							}, {
+							img: 1,
+							name: 'Татьяна Приходько',
+							descr: 'Инструктор тренажерного зала, групповых программ и детского фитнеса'
+							}, {
+							img: 2,
+							name: 'Ольга Черняк',
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							}, {
+							img: 3,
+							name: 'Ольга Черняк',
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							}, {
+							img: 1,
+							name: 'Татьяна Приходько',
+							descr: 'Инструктор тренажерного зала, групповых программ и детского фитнеса'
+							}, {
+							img: 3,
+							name: 'Ольга Черняк',
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							}]
+						mixin squadPerson(person)
+							+e.squad-person
+								+e.squad-person-img
+									+e.IMG(src=`static/img/content/team_person-${person.img}.png` alt='image')
+								+e.BUTTON.squad-person-btn.btn._pink(data-popup-target='contact-popup' type='button')
+									span Записаться на консультацию
+								+e.squad-person-name
+									h5= person.name
+								+e.squad-person-descr
+									p= person.descr
+								+social('_grey team__squad-person-socials', 'fb', 'inst')
+						each person in squadList
+							+squadPerson(person)
+		//end team
+
+		include ../sections/shop
+
+		//begin career
+		+b.SECTION.career#career
+			-
+				careerList = [
+				['Вы талантливы и энергичны?', 'Присоединяйтесь к нашей команде', 'contact-popup'],
+				['Есть вопросы или предложения?', 'Свяжитесь с нами прямо сейчас', 'join-popup']]
+
+			each el in careerList
+				+e.item
+					+e.item-mask.decor-mask(data-anim='mask')
+					+e.item-inner
+						+e.item-sub-title
+							h5= el[0]
+						+e.item-title-wrap
+							+e.item-title
+								h4= el[1]
+
+							+e.A.item-link.arrow-link._arr-r(data-popup-target= el[2] href='#!')
+								span Написать
+								.
+									<svg width="55px" height="15px" viewBox="0 0 55 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g>
+									<g class='for-fill' transform="translate(0.000000, 6.000000)">
+									<rect transform="translate(26.500000, 1.000000) rotate(90.000000) translate(-26.500000, -1.000000) " x="25.5" y="-25.5" width="2" height="53" rx="1"></rect>
+									</g>
+									<polyline class='for-stroke' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(52.000000, 7.000000) scale(-1, 1) rotate(90.000000) translate(-52.000000, -7.000000) " points="48 5 52 9 56 5"></polyline>
+									</g>
+									</g>
+									</svg>
+		//end career

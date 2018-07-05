@@ -1,0 +1,31 @@
+.to-top
+	pointer-events: none
+	position: fixed
+	z-index: 19
+	right: 30px
+	bottom: 30px
+	width: 52px
+	height: 52px
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	background-color: $color2
+	border-radius: 50%
+	opacity: 0
+	transform: rotate(180deg)
+	box-shadow: 0px 0px 20px 3px rgba(99, 34, 59, 0.1)
+	+trs
+	+sm
+		right: 10px
+		bottom: 10px
+	&:hover
+		background-color: $color1
+	&.is-active
+		pointer-events: auto
+		opacity: 1
+	
+	&__arrows
+		position: relative
+		top: 3px
+		left: 7px

@@ -1,0 +1,114 @@
+.article
+   padding: 43px 0
+   +xs
+      padding: 30px 0 40px
+   
+   blockquote
+      margin: 37px 0
+      font-size: 24px
+      line-height: 36px
+      +xs
+         margin: 20px 0
+         font-size: 20px
+         line-height: 30px
+   
+   &__container
+      max-width: 956px
+   &__inner
+      max-width: 718px
+      margin: 0 auto
+      &:not(:last-child)
+         margin-bottom: 50px
+         +xs
+            margin-bottom: 30px
+      > * + *
+         margin-top: 30px
+         +xs
+            margin-top: 20px
+      > p
+         font-size: 14px
+         line-height: 26px
+         color: #373839
+         & + &
+            margin-top: 30px
+         a
+            color: #f7b1ce
+            +trs
+            &:hover
+               color: #e65588
+               
+   &__top
+      margin-bottom: 35px
+      +xs
+         margin-bottom: 0
+   &__back-link
+      color: #b9c0cc
+      span
+         margin-left: 22px
+   &__title
+      display: flex
+      align-items: center
+      margin-bottom: -10px
+      + p
+         line-height: 30px
+      &-text
+         margin-right: 15px
+         +f('gil-700', 24, 36)
+         color: #373839
+         +xs
+            font-size: 22px
+            line-height: 24px
+         
+   &__img
+      margin-bottom: 60px
+      +ratio(926, 616)
+      +cover
+      +sm
+         margin: 0 30px 50px
+         +ratio(678, 450)
+      +xs
+         margin: 0 0 30px
+   
+   &__slider
+      display: none
+      margin-bottom: 60px
+      +sm
+         padding: 0 30px
+      +xs
+         padding: 0
+      &.slick-initialized
+         display: block
+      &-item
+      &-img
+         +ratio(926, 616)
+         +cover
+      .slider-btn
+         +xs
+            display: none!important
+      .slider-btn_prev
+         left: -25px
+         +sm
+            left: 5px
+      .slider-btn_next
+         right: -25px
+         +sm
+            right: 5px
+            
+      .slick-dots
+         bottom: -40px
+         li button
+            background: #47505c
+      .slick-dots li.slick-active button
+         border-color: #47505c
+         background: #fff
+   &__actions
+      display: flex
+      align-items: center
+      justify-content: space-between
+      +xs
+         flex-direction: column
+         margin-top: 30px
+         
+   &__share
+      order: -1
+      margin-bottom: 20px

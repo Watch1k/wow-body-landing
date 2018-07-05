@@ -1,0 +1,54 @@
+include ../bemto/index
+include ../partials/_variables
+include ../partials/_mixins
+include ../components/_helpers
+include ../components/popup
+
+- var suffix = production ? '.min' : '';
+
+doctype html
+html(lang='ru')
+
+    block variables
+        - var title = defaultPageTitle;
+
+    block head
+        head
+            meta(name='format-detection', content='telephone=no')
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            meta(name='viewport', content='width=device-width, initial-scale=1.0')
+            title= title
+            link(href='static/css/index' + suffix + '.css', rel='stylesheet')
+            link(rel='icon', href='static/favicon.ico')
+
+    block body
+        body(class= bodyClass || '')
+
+            include ../components/preloader
+
+            // picture element HTML5 shiv
+            block inlineScripts
+                script.
+                  document.createElement('picture');
+
+            // Header
+            block header
+                include ../components/header
+
+            // Main content
+            block main
+                main
+
+            block modals
+                +popup({name: 'inform-popup'})
+                +popup({name: 'contact-popup'})
+                +popup({name: 'join-popup'})
+
+            // Footer
+            block footer
+                include ../components/footer
+
+            // Scripts
+            block scripts
+                script(src='static/js/index' + suffix + '.js')

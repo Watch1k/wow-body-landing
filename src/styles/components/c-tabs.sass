@@ -1,0 +1,89 @@
+.c-tabs
+	$parent: &
+	&__nav
+		position: relative
+		display: flex
+		justify-content: center
+		margin-bottom: 40px
+		+sm
+			display: inline-flex
+			flex-direction: column
+			justify-content: flex-start
+			align-items: center
+	&__for
+		position: relative
+	&__btn
+		opacity: 0
+		transform: translateY(30px)
+		position: relative
+		margin: 0 5px
+		padding: 11px 25px
+		+f('gil-700', 16, 16)
+		letter-spacing: 1.6px
+		text-transform: uppercase
+		text-align: center
+		white-space: nowrap
+		cursor: pointer
+		line-height: 1
+		color: #b9c0cc
+		border: 1px solid transparent
+		border-radius: 26px
+		+trs
+		+sm
+			display: flex
+			align-items: center
+			transition: none
+			padding: 0 45px 0 30px
+			height: 40px
+			justify-content: center
+		+xs
+			min-width: 206px
+			display: flex
+			justify-content: space-between
+			padding: 0 40px 0 30px
+			font-size: 11px
+			letter-spacing: .8px
+			
+		&:first-child
+			+sm
+				opacity: 1
+				transform: none
+			
+		&.is-active
+			pointer-events: none
+			border-color: #b9c0cc
+			color: #47505c
+			svg
+				opacity: 1
+				fill: #47505c
+		&.is-disabled
+			pointer-events: none
+			opacity: 0.5
+			background-color: $white
+		.no-touch &:hover
+			color: #47505c
+		
+		svg
+			display: none
+			opacity: 0
+			position: absolute
+			transform: translateY(-50%)
+			top: 50%
+			right: 20px
+			width: 12px
+			height: 10px
+			fill: #b9c0cc
+			transition: .3s ease
+			+sm
+				display: block
+				align-self: center
+			+xs
+				width: 10px
+				height: 8px
+				right: 25px
+	
+	&__tab
+		display: none
+		
+		&:first-child
+			display: block

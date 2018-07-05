@@ -1,0 +1,62 @@
+mixin social(classMod, ...socList)
+	+b.socials(class= classMod)
+		each socLink in socList
+			if socLink === 'fb'
+				+e.A(href='#!' target='_blank')
+					svg(class='socials__icon socials__icon-fb' width='12px', height='20px', viewbox='0 0 12 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+						g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd', stroke-linecap='round', stroke-linejoin='round')
+							g(class='for-fill' stroke-width='2')
+								path(d='M1.36371737,11.8412924 L2.66020924,11.8412924 L2.66020924,18.3333553 C2.66548688,19.0827625 3.27450087,19.6874877 4.02392661,19.6874691 L6.59770305,19.6874691 C6.95938607,19.6900251 7.30726992,19.5487938 7.56481953,19.2948463 C7.82236913,19.0408988 7.96848597,18.6950385 7.97102406,18.3333553 L7.97102406,11.8412924 L9.26751593,11.8412924 C9.83970704,11.7802928 10.3330871,11.4120988 10.5544042,10.880928 L11.4379393,9.14266856 C11.4412144,9.11074019 11.4412144,9.07856051 11.4379393,9.04663213 C11.5409505,8.66072671 11.4670506,8.24899865 11.2362628,7.92300585 C10.9764873,7.59401412 10.5798399,7.4027734 10.1606548,7.4044091 L7.97102406,7.4044091 L7.97102406,4.86904723 L10.1510511,4.86904723 C10.9005105,4.87439932 11.5138352,4.27394156 11.5243721,3.52453715 L11.5243721,1.35411373 C11.5190945,0.604706574 10.9100805,-1.85834894e-05 10.1606548,0 L7.49084189,0 C4.2448104,0 2.68902017,2.00716148 2.68902017,6.13672816 L2.68902017,7.39480546 L1.36371737,7.39480546 C0.614291634,7.39478687 0.00527764579,7.99951203 0,8.74891918 L0,10.4871786 C0.00527764579,11.2365858 0.614291634,11.841311 1.36371737,11.8412924 Z')
+
+			if socLink === 'inst'
+				+e.A(href='#!' target='_blank')
+					svg(class='socials__icon socials__icon-inst' width='20px', height='20px', viewbox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+						g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+							g#Desctop-HD(transform='translate(-1298.000000, -8431.000000)')
+								g#Footer(transform='translate(0.000000, 8191.000000)')
+									g#social(transform='translate(1267.000000, 240.000000)')
+										g#Rectangle-8(transform='translate(31.000000, 0.000000)')
+											rect(stroke='#FFFFFF', class='for-fill', stroke-width='2', x='1', y='1', width='18', height='18', rx='4')
+											circle#Oval-2(class='for-fill', stroke-width='2', cx='10', cy='10', r='3.84615385')
+											circle#Oval-2-Copy(class='for-fill' fill-rule='evenodd', cx='15.7692308', cy='4.23076923', r='1.15384615')
+
+			if socLink === 'yt'
+				+e.A(href='#!' target='_blank')
+					svg(class='socials__icon socials__icon-yt' width='20px', height='20px', viewbox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+						g#Page-1(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+							g#Desctop-HD(transform='translate(-1337.000000, -8431.000000)', stroke='#FFFFFF', class='for-fill', stroke-width='2')
+								g#Footer(transform='translate(0.000000, 8191.000000)')
+									g#social(transform='translate(1267.000000, 240.000000)')
+										g#Rectangle-8-Copy(transform='translate(70.000000, 0.000000)')
+											rect(x='1', y='1', width='18', height='18', rx='4')
+											polygon#Triangle-3(stroke-linecap='round', stroke-linejoin='round', transform='translate(10.769231, 10.000000) rotate(90.000000) translate(-10.769231, -10.000000) ', points='10.7692308 6.92307692 14.6153846 13.0769231 6.92307692 13.0769231')
+
+mixin share(classMod, text, ...shareList)
+	+b.share(class= classMod)
+		+e.P.title= text
+		each shareLink in shareList
+			if shareLink === 'tw'
+				+e.A(href='#!').
+					<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g transform="translate(-968.000000, -1732.000000)">
+											<g transform="translate(968.000000, 1732.000000)">
+													<circle class="for-fill" cx="25" cy="25" r="25"></circle>
+													<path d="M17.0651892,35.3638542 C20.2878848,36.320057 25.2320155,36.7401826 29.3034409,32.5754588 C33.2322126,28.5544831 33.6266082,25.1283545 33.2661777,22.963397 C33.2066388,22.6028355 33.3740671,22.242274 33.6889443,22.052463 C34.0941288,21.8106326 34.5916187,21.0335193 35,20.2305949 C34.4545593,20.2631566 33.6769566,20.3215294 32.8342206,20.4204059 C32.5581038,20.4482025 32.277991,20.3552824 32.0825913,20.1539557 C31.3581341,19.4094041 30.3911256,19 29.3617811,19 C27.2743214,19 25.5756631,20.6892387 25.5756631,22.7644529 C25.5756631,23.0356682 25.6024357,23.2949707 25.6575791,23.5344185 C25.7183168,23.8088106 25.6471898,24.0951155 25.464577,24.3091492 C25.2807655,24.523183 25.002251,24.6395316 24.7257346,24.6220594 C19.762024,24.3242388 16.8014596,22.179136 15.3593383,20.7515824 C13.3809668,27.7003335 20.2023725,31.7256773 20.5124546,31.9047668 C20.7454157,32.0385875 20.9068502,32.2712847 20.9504055,32.5353523 C20.9923625,32.8006112 20.9140428,33.0706353 20.7350264,33.2715649 C20.6615018,33.3557489 19.4135813,34.7193703 17.0651892,35.3638542 Z" fill="#FFFFFF"></path>
+											</g>
+									</g>
+							</g>
+					</svg>
+
+			if shareLink === 'fb'
+				+e.A(href='#!').
+					<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g transform="translate(-1028.000000, -1732.000000)">
+											<g transform="translate(1028.000000, 1732.000000)">
+													<circle class="for-fill" cx="25" cy="25" r="25"></circle>
+													<path d="M22.2152814,36 L26.6497896,36 L26.6497896,25.4990349 L29.608101,25.4990349 L30,21.8805417 L26.6497896,21.8805417 L26.6543924,20.0687215 C26.6543924,19.125494 26.7464492,18.6191366 28.1299316,18.6191366 L29.9789584,18.6191366 L29.9789584,15 L27.0199895,15 C23.465939,15 22.2152814,16.7558442 22.2152814,19.7077729 L22.2152814,21.8805417 L20,21.8805417 L20,25.4996783 L22.2152814,25.4996783 L22.2152814,36 Z" id="Path" fill="#FFFFFF"></path>
+											</g>
+									</g>
+							</g>
+					</svg>

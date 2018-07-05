@@ -1,0 +1,169 @@
+mixin popup(el)
+	case el.name
+		when 'inform-popup'
+			+b.popup._sm(data-popup-id='inform-popup' tabindex='-1', role='dialog')
+				+e.container
+					+e.BUTTON.close.js-popup-close(type='button')
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='25', height='25', viewbox='0 0 25 25')
+							defs
+								path#bpq2a(d='M1220.63 158l-1.38-1.4 10.38-10.5 1.38 1.4z')
+								path#bpq2b(d='M1230.72 147.49l-1.37 1.39-10.35-10.5 1.37-1.4z')
+								path#bpq2c(d='M1238.37 137l1.38 1.4-10.38 10.5-1.38-1.4z')
+								path#bpq2d(d='M1228.28 147.51l1.37-1.4 10.35 10.5-1.37 1.4z')
+							g
+								g(transform='translate(-1217 -135)')
+									g
+										use(xlink:href='#bpq2a')
+									g
+										use(xlink:href='#bpq2b')
+									g
+										use(xlink:href='#bpq2c')
+									g
+										use(xlink:href='#bpq2d')
+
+					+b.inform
+						+e.content
+							p Оставте нам свой email и мы обязательно сообщим вам когда запустится эта программа.
+							p Долго ждать не придется!
+
+						+e.FORM.form.form(action='#!' method='POST')
+							+b.form-group.inform__form-group
+								+b.INPUT.form-control(type='email' name='email' required autocomplete="off")
+								+b.control-label
+									span Email
+								+b.help-block Необходимо заполнить «Почта».
+
+							+b.LABEL.form-submit-btn.btn._lg._purple
+								span сообщить о запуске
+								+e.INPUT(type='submit' value='')
+
+		when 'contact-popup'
+			+b.popup(data-popup-id='contact-popup' tabindex='-1', role='dialog')
+				+e.container
+					+e.BUTTON.close.js-popup-close(type='button')
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='25', height='25', viewbox='0 0 25 25')
+							defs
+								path#bpq2a(d='M1220.63 158l-1.38-1.4 10.38-10.5 1.38 1.4z')
+								path#bpq2b(d='M1230.72 147.49l-1.37 1.39-10.35-10.5 1.37-1.4z')
+								path#bpq2c(d='M1238.37 137l1.38 1.4-10.38 10.5-1.38-1.4z')
+								path#bpq2d(d='M1228.28 147.51l1.37-1.4 10.35 10.5-1.37 1.4z')
+							g
+								g(transform='translate(-1217 -135)')
+									g
+										use(xlink:href='#bpq2a')
+									g
+										use(xlink:href='#bpq2b')
+									g
+										use(xlink:href='#bpq2c')
+									g
+										use(xlink:href='#bpq2d')
+
+					+b.connect
+						+e.img-wrap
+							+e.IMG(src='static/img/content/connect-pop_img.jpg' alt='image')
+
+						+e.content
+							+e.text
+								+e.title
+									h3 связаться
+								+e.descr
+									p Не стесняйтесь, пишите нам по любым вопросам или замечаниям мы всегда открыты к диалогу.
+
+							+e.FORM.form.form._default(action='#!' method='POST')
+								+b.form-group.has-error
+									+b.INPUT.form-control(type='text' name='name' required autocomplete="off")
+									+b.control-label
+										span Имя
+									+b.help-block Необходимо заполнить «ФИО».
+								+b.form-group
+									+b.INPUT.form-control(type='email' name='email' required autocomplete="off")
+									+b.control-label
+										span Email
+									+b.help-block Необходимо заполнить «Почта».
+								+b.form-group
+									+b.INPUT.form-control(type='text' name='text' required autocomplete="off")
+									+b.control-label
+										span Телефон
+									+b.help-block Необходимо заполнить «Телефон».
+								+b.form-group
+									textarea.form-textarea(name='message' autocomplete='off')
+									label.form-textarea-label
+										span Ваш вопрос
+									+b.help-block Необходимо заполнить «Ваш вопрос».
+
+								+e.form-submit-wrap._default
+									+b.LABEL.form-submit-btn.btn._lg._pink
+										span Отправить
+										+e.INPUT(type='submit' value='')
+
+		when 'join-popup'
+			+b.popup(data-popup-id='join-popup' tabindex='-1', role='dialog')
+				+e.container
+					+e.BUTTON.close.js-popup-close(type='button')
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='25', height='25', viewbox='0 0 25 25')
+							defs
+								path#bpq2a(d='M1220.63 158l-1.38-1.4 10.38-10.5 1.38 1.4z')
+								path#bpq2b(d='M1230.72 147.49l-1.37 1.39-10.35-10.5 1.37-1.4z')
+								path#bpq2c(d='M1238.37 137l1.38 1.4-10.38 10.5-1.38-1.4z')
+								path#bpq2d(d='M1228.28 147.51l1.37-1.4 10.35 10.5-1.37 1.4z')
+							g
+								g(transform='translate(-1217 -135)')
+									g
+										use(xlink:href='#bpq2a')
+									g
+										use(xlink:href='#bpq2b')
+									g
+										use(xlink:href='#bpq2c')
+									g
+										use(xlink:href='#bpq2d')
+
+					+b.connect
+						+e.img-wrap
+							+e.IMG(src='static/img/content/connect-pop_img.jpg' alt='image')
+						+e.content
+							+e.text
+								+e.title
+									h3 присоедениться
+								+e.descr
+									p Если вы энергичны, дружелюбны, любите спорт
+										br
+										| и хотите работьть в классной команде, 
+										br
+										| пишите нам, мы всегда в поиске ценных кадров.
+
+							+e.FORM.form.form._default(action='#!' method='POST')
+								+b.form-group
+									+b.INPUT.form-control(type='text' name='name' required autocomplete="off")
+									+b.control-label
+										span Имя
+									+b.help-block Необходимо заполнить «ФИО».
+								+b.form-group.has-error
+									+b.INPUT.form-control(type='email' name='email' required autocomplete="off")
+									+b.control-label
+										span Email
+									+b.help-block Необходимо заполнить «Почта».
+								+b.form-group
+									+b.INPUT.form-control(type='text' name='tel' required autocomplete="off")
+									+b.control-label
+										span Телефон
+									+b.help-block Необходимо заполнить «Телефон».
+								+b.form-group
+									textarea.form-textarea(name='message' autocomplete='off')
+									label.form-textarea-label
+										span О себе
+									+b.help-block Необходимо заполнить «О себе».
+
+								+b.form-group._upload.connect__form-upload
+									+b.LABEL.add-file-btn
+										svg(height='16px' version='1.1' viewbox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+											g(fill-rule='evenodd' stroke='none' stroke-width='1')
+												g(transform='translate(-768.000000, -432.000000)')
+													path(d='M769,446 L781,446 L781,443 L783,443 L783,446 L783,448 L769,448 Z M769,443 L771,443 L771,446 L769,446 Z M778,438 L778,445 L774,445 L774,438 L772,438 L776,433 L780,438 Z M778,438')
+
+										span Прикрепить резюме
+										input(type='file' accept=".doc, .docx, .ppt, .pptx, .txt, .pdf")
+
+								+e.form-submit-wrap
+									+b.LABEL.form-submit-btn.btn._lg._pink
+										span Отправить
+										+e.INPUT(type='submit' value='')

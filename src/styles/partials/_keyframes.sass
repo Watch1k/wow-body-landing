@@ -1,0 +1,62 @@
+@keyframes smallMoving
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(5px)
+  100%
+    transform: translateY(0)
+    
+@keyframes arrLeft
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(-10px)
+  100%
+    transform: translateX(0)
+    
+@keyframes arrRight
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(10px)
+  100%
+    transform: translateX(0)
+    
+@keyframes arrDown
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(4px)
+  100%
+    transform: translateY(0)
+    
+@keyframes pulse-btn
+  0%
+    transform: translate(-50%, -50%) scale(.8)
+    opacity: 1
+  100%
+    transform: translate(-50%, -50%) scale(1.8)
+    opacity: 0
+    
+// default anims
+[data-anim='bg']
+  opacity: 0
+  transform: translateY(-200px)
+
+[data-anim='fade-y']
+  opacity: 0
+  transform: translateY(60px)
+
+[data-anim-stagger="fade-x"]
+  > *
+    opacity: 0
+    transform: translateX(-60px)
+
+[data-anim-stagger="fade-y"]
+  > *
+    opacity: 0
+    transform: translateY(50px)
+    
+[data-anim-stagger="zoom-in"]
+  > *
+    transform: scale(0)

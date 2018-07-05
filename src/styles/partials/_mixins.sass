@@ -1,0 +1,201 @@
+// width
+=r($width)
+   @media only screen and (max-width: $width+ "px")
+      @content
+
+=rmin($width)
+   @media only screen and (min-width: $width+ "px")
+      @content
+
+// height
+=rh($height)
+   @media only screen and (max-height: $height + "px")
+      @content
+
+=rhmin($height)
+   @media only screen and (min-height: $height + "px")
+      @content
+
+// px to em
+$browser-context: 16
+@function em($pixels, $context: $browser-context)
+   @return #{$pixels/$context}em
+
+// hide elem
+=hide-el
+   position: absolute
+   clip: rect(0, 0, 0, 0)
+   height: 1px
+   width: 1px
+   margin: -1px
+
+=cover-video
+   object-fit: cover
+   font-family: 'object-fit: cover;'
+
+=cover-img
+   img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      font-family: 'object-fit: cover;'
+
+// gpu
+=gpu
+   transform: translate3d(0, 0, 0)
+
+// clearfix
+=clr
+   &:after
+      content: ""
+      display: table
+      clear: both
+
+=no-clr
+   &:after
+      content: none
+      display: none
+
+// minWidth
+=rmin($width)
+   @media only screen and (min-width: $width+ "px")
+      @content
+
+// background cover
+=cover
+   background-repeat: no-repeat
+   background-size: cover
+   background-position: 50% 50%
+
+// placeholder
+=placeholder-color($color)
+   &:-moz-placeholder,
+   &::-moz-placeholder
+      color: $color
+      opacity: 1
+   &::-webkit-input-placeholder
+      color: $color
+
+// unselectable
+=unselectable
+   -webkit-touch-callout: none
+   -webkit-user-select: none
+   -khtml-user-select: none
+   -moz-user-select: none
+   -ms-user-select: none
+   user-select: none
+
+=nosel
+   +unselectable
+
+// selection
+=selection
+   & ::selection
+      @content
+   & ::-moz-selection
+      @content
+
+//triangle
+=arr($width, $height, $bg, $direction)
+   width: 0px
+   height: 0px
+   border-style: solid
+   @if $direction == t
+      border-width: 0 $width / 2 + px $height + px $width / 2 + px
+      border-color: transparent transparent $bg transparent
+   @if $direction == r
+      border-width: $height / 2 + px 0 $height / 2 + px $width + px
+      border-color: transparent transparent transparent $bg
+   @if $direction == b
+      border-width: $height + px $width / 2 + px 0 $width / 2 + px
+      border-color: $bg transparent transparent transparent
+   @if $direction == l
+      border-width: $height / 2 + px $width + px $height / 2 + px 0
+      border-color: transparent $bg transparent transparent
+   @if $direction == tl
+      border-width: $height + px $width + px 0 0
+      border-color: $bg transparent transparent transparent
+   @if $direction == tr
+      border-width: 0 $width + px $height + px 0
+      border-color: transparent $bg transparent transparent
+   @if $direction == br
+      border-width: 0 0 $height + px $width + px
+      border-color: transparent transparent $bg transparent
+   @if $direction == bl
+      border-width: $width + px 0 0 $height + px
+      border-color: transparent transparent transparent $bg
+// example
+// +arr(500,50, #000, l)
+// +arr(500,50, #000, bl)
+
+=vcenter
+   position: absolute
+   top: 50%
+   left: 50%
+   transform: translate(-50%, -50%)
+
+=vertical
+   font-size: 0
+   text-align: center
+   &:before
+      content: ""
+      display: inline-block
+      vertical-align: middle
+      width: 0
+      height: 100%
+
+=hide-text
+   font: 0/0 a
+   text-shadow: none
+   color: transparent
+
+=hidetext
+   +hide-text
+
+=text-overflow
+   overflow: hidden
+   -ms-text-overflow: ellipsis
+   text-overflow: ellipsis
+   white-space: nowrap
+
+=ratio($width, $height)
+   position: relative
+   &:before
+      display: block
+      content: ""
+      width: 100%
+      padding-top: ($height / $width) * 100%
+
+=coverdiv
+   position: absolute
+   top: 0
+   left: 0
+   right: 0
+   bottom: 0
+
+// justify, set on parent
+=justify
+   text-align: justify
+   line-height: 0
+   font-size: 0
+   text-justify: newspaper
+   zoom: 1
+   text-align-last: justify
+   &:after
+      content: ''
+      display: inline-block
+      width: 100%
+      height: 0
+      visibility: hidden
+      overflow: hidden
+
+// png sprite mixin
+=s($width, $height, $posX, $posY, $name)
+   width: $width + px
+   height: $height + px
+   background: url('../img/other/#{$name}-sprite.png') no-repeat $posX + px $posY + px
+
+=disableAnims
+   .anims-disabled &
+      opacity: 1
+      transform: none

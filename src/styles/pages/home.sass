@@ -1,0 +1,948 @@
+.programs
+   position: relative
+   display: flex
+   flex-wrap: wrap
+   z-index: 1
+   
+.program-card
+   $parent: &
+   position: relative
+   flex: 0 1 50%
+   height: 365px
+   cursor: default
+   +sm
+      height: 342px
+   +xs
+      height: 275px
+      padding-bottom: 45px
+      flex: 0 1 auto
+      width: 100%
+      
+   &::after
+      +coverdiv
+      z-index: -1
+      content: ''
+      +xs
+         bottom: 45px
+      
+   &_mom::after
+      background-image: linear-gradient(to bottom, #f5c9db, #fbddeb)
+   &_slim::after
+      background-color: #f6a7c8
+   &_strong::after
+      background-color: #fdcead
+   &_heavy::after
+      background-color: #a8dcbf
+   &_men::after
+      background-color: #1f262c
+   &_yoga
+      +xs
+         height: 228px
+         padding-bottom: 0
+      &::after
+         background-color: #a4a1d6
+         +xs
+            bottom: 0
+   &_empty::after
+      background-color: #fff
+   &.is-disabled
+      pointer-events: none
+   
+   &__inner
+      +coverdiv
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      justify-content: center
+      overflow: hidden
+      +xs
+         bottom: 45px
+         
+      #{$parent}_yoga &
+         +xs
+            bottom: 0
+      
+   &__img
+      position: absolute
+      z-index: 2
+      max-width: none
+      pointer-events: none
+      #{$parent}_mom &
+         top: 0
+         left: -30px
+         width: 345px
+         height: 365px
+         +md
+            left: -125px
+         +sm
+            left: -195px
+         +xs
+            left: -82px
+            width: 215px
+            height: 230px
+            
+      #{$parent}_slim &
+         top: -260px
+         left: -20px
+         width: 352px
+         height: 812px
+         +sm
+            top: -240px
+            left: -120px
+            width: 302px
+            height: 692px
+         +xs
+            top: -180px
+            left: -90px
+            width: 245px
+            height: 540px
+            
+      #{$parent}_strong &
+         top: -270px
+         left: -236px
+         width: 825px
+         height: 930px
+         +md
+            left: -256px
+         +sm
+            top: -170px
+            left: -376px
+            width: 645px
+            height: 720px
+         +xs
+            top: -142px
+            left: -276px
+            width: 500px
+            height: 530px
+      #{$parent}_heavy &
+         top: -33px
+         left: -70px
+         width: 505px
+         height: 595px
+         +sm
+            top: -19px
+            left: -104px
+            width: 395px
+            height: 465px
+         +xs
+            width: 315px
+            height: 365px
+      #{$parent}_men &
+         top: -25px
+         left: -90px
+         width: 390px
+         height: 575px
+         +sm
+            top: -25px
+            left: -150px
+            width: 350px
+            height: 555px
+         +xs
+            top: -15px
+            left: -110px
+            width: 260px
+            height: 350px
+      #{$parent}_yoga &
+         top: -10px
+         left: -165px
+         width: 650px
+         height: 480px
+         +sm
+            left: -155px
+            width: 560px
+            height: 430px
+         +xs
+            left: -125px
+            width: 450px
+            height: 300px
+      
+   &__content
+      position: relative
+      z-index: 3
+      display: flex
+      flex-direction: column
+      max-width: 450px
+      margin-top: 30px
+      margin-right: 15px
+      text-align: center
+      color: #fff
+      +md
+         max-width: 370px
+      +sm
+         margin-top: -55px
+      p
+         +f('gil-500', 20, 24)
+         +sm
+            font-size: 18px
+            line-height: 22px
+         
+      #{$parent}_mom &
+         +sm
+            max-width: 275px
+         +xs
+            margin-top: -15px
+            margin-right: 22px
+      #{$parent}_slim &
+         max-width: 425px
+         margin-right: 30px
+         +md
+            max-width: 305px
+            margin-right: 20px
+         +sm
+            max-width: 240px
+            margin-right: 33px
+            margin-top: -43px
+         +xs
+            max-width: 280px
+            margin-right: 16px
+            margin-top: -15px
+      #{$parent}_strong &
+         max-width: 350px
+         margin-right: 65px
+         +md
+            margin-right: 25px
+         +sm
+            max-width: 230px
+            margin-top: -30px
+            margin-right: 45px
+         +xs
+            max-width: 240px
+            margin-top: 0
+            margin-right: 40px
+      #{$parent}_heavy &
+         max-width: 280px
+         margin-right: 98px
+         +md
+            margin-right: 28px
+         +sm
+            max-width: 220px
+            margin-right: 38px
+            margin-top: -33px
+         +xs
+            max-width: 245px
+            margin-right: 38px
+            margin-top: -20px
+      #{$parent}_men &
+         max-width: 320px
+         margin-top: 20px
+         margin-right: 80px
+         +md
+            margin-right: 40px
+         +sm
+            max-width: 220px
+            margin-top: -30px
+            margin-right: 50px
+         +xs
+            margin-top: 0
+      #{$parent}_yoga &
+         margin-top: 20px
+         margin-right: 100px
+         +md
+            margin-right: 30px
+         +sm
+            max-width: 280px
+            margin: -42px auto 0
+         +xs
+            margin: 25px auto 0
+   
+   &__logo-link
+      align-self: center
+      margin-bottom: 25px
+      +sm
+         +cover-img
+         height: 20px
+      +xs
+         margin-bottom: 10px
+         height: 18px
+         
+      #{$parent}_mom &
+         +sm
+            width: 180px
+         +xs
+            width: 154px
+            
+      #{$parent}_slim &
+         +sm
+            width: 171px
+            margin-bottom: 20px
+         +xs
+            margin-bottom: 15px
+            width: 156px
+      #{$parent}_men &
+         margin-bottom: 50px
+         
+      #{$parent}_strong &
+         margin-bottom: 35px
+         +sm
+            width: 195px
+            margin-bottom: 25px
+         +xs
+            height: 20px
+            margin-bottom: 15px
+      #{$parent}_heavy &
+         +sm
+            width: 180px
+         
+      #{$parent}_men &
+         +sm
+            width: 140px
+            height: 16px
+            margin-bottom: 30px
+         +xs
+            margin-bottom: 15px
+      #{$parent}_yoga &
+         margin-bottom: 45px
+         +sm
+            width: 160px
+            margin-bottom: 30px
+         +xs
+            margin-bottom: 55px
+      &.is-disabled
+         pointer-events: none
+         
+   &__back-title
+      position: absolute
+      z-index: 1
+      +f('gil-900', 200, 200)
+      color: rgba(#fff, .2)
+      pointer-events: none
+      +xs
+         font-size: 160px
+         line-height: 160px
+      #{$parent}_mom &
+         top: 20px
+         right: 20px
+         +sm
+            top: 25px
+            right: -10px
+         +xs
+            right: -65px
+      #{$parent}_slim &
+         top: 28px
+         right: 30px
+         +sm
+            top: 25px
+            right: -65px
+         +xs
+            right: -40px
+      #{$parent}_strong &
+         top: 30px
+         right: -20px
+         +sm
+            top: 20px
+            right: -10px
+         +xs
+            top: 4px
+            right: -150px
+      #{$parent}_heavy &
+         top: 25px
+         right: 10px
+         +sm
+            top: 17px
+            right: -50px
+         +xs
+            top: 3px
+            right: -80px
+      #{$parent}_men &
+         top: 40px
+         right: 50px
+         +sm
+            top: 20px
+            right: -10px
+         +xs
+            top: 10px
+      #{$parent}_yoga &
+         top: 27px
+         right: 15px
+         +sm
+            top: 20px
+            right: -35px
+         +xs
+            top: 0
+            right: -70px
+   
+   &__socials
+      position: absolute
+      z-index: 5
+      right: 30px
+      bottom: 25px
+      display: flex
+      font-size: 0
+      line-height: 0
+      +sm
+         display: none
+      a
+         &:not(:last-child)
+            margin-right: 20px
+            
+         &:hover .socials__icon
+            .for-fill
+               stroke: #7e8ba1!important
+            
+      #{$parent}:hover:not(.program-card_yoga) &
+         a .for-fill
+            stroke: #b9c0cc
+          
+   &__info
+      +coverdiv
+      display: flex
+      align-items: center
+      justify-content: center
+      z-index: 4
+      background: #fff
+      opacity: 0
+      transform: scale(.85)
+      transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1)
+      +sm
+         top: auto
+         left: 15px
+         right: 15px
+         bottom: 18px
+         opacity: 1
+         transform: none
+         color: #fff
+      +xs
+         left: 10px
+         right: 10px
+         bottom: 7px
+      #{$parent}:hover &
+         opacity: 1
+         transform: scale(1)
+         
+      #{$parent}_mom &
+         +sm
+            background-color: #5d82b9
+      #{$parent}_slim &
+         +sm
+            background-color: #e65588
+      #{$parent}_strong &
+         +sm
+            background-color: #ff9924
+      #{$parent}_heavy &
+         +sm
+            background-color: #537161
+      #{$parent}_men &
+         +sm
+            background-color: #bf392c
+   
+      &-content
+         max-width: 480px
+         text-align: center
+         +sm
+            width: 100%
+            max-width: none
+         > p
+            margin-bottom: 20px
+            letter-spacing: 1px
+            +sm
+               display: none
+               
+      &-data
+         display: flex
+         margin: 0 -5px 25px
+         +sm
+            padding: 3px 10px 13px
+            margin: 0 -5px
+         +xs
+            padding: 12px 22px 20px 10px
+         &-item
+            flex: 0 1 25%
+            padding: 0 5px
+            span
+               +f('gil-700', 40, 50)
+               +sm
+                  font-size: 26px
+                  letter-spacing: .4px
+                  line-height: 45px
+               +xs
+                  font-size: 22px
+                  letter-spacing: .3px
+                  line-height: 20px
+            p
+               +f('gil-600', 14, 24)
+               letter-spacing: .9px
+               +sm
+                  font-size: 12px
+                  line-height: 14px
+                  letter-spacing: .8px
+               +xs
+                  font-size: 8px
+                  letter-spacing: .5px
+      &-btn
+         +sm
+            display: none
+            
+   &__btn
+
+.about
+   height: 1104px
+   background-repeat: no-repeat
+   background-size: cover
+   background-position: 50% 0
+   +lg
+      background-position: 50% 50%
+   +md
+      height: 848px
+      background-position: 68% 0
+      background-size: 150% 125%
+   +sm
+      height: 1024px
+      background-position: 60% 50%
+      background-size: cover
+   +xs
+      height: 100vh
+      order: -1
+      background-position: 55% 50%
+   +mob-fix
+      height: 150vh
+      
+   &__container
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      height: 100%
+      padding: 0 15px 65px
+      +md
+         padding: 0 15px 30px
+      +sm
+         padding: 0 15px 50px
+      +xs
+         padding: 0 15px
+   &__content
+      text-align: center
+      +xs
+         position: absolute
+         left: 0
+         right: 0
+         bottom: 0
+         width: 100%
+         padding-bottom: 50px
+         background-image: linear-gradient(to bottom, rgba(71, 80, 92, 0), #333941)
+      &-title
+         margin-bottom: 35px
+         margin-left: 45px
+         letter-spacing: 0.02em
+         +md
+            margin-left: 0
+            font-size: 180px
+         +sm
+            font-size: 140px
+            line-height: 170px
+         +xs
+            margin: 0 -10px
+            font-size: 60px
+            line-height: 60px
+      &-descr
+         max-width: 730px
+         margin: 0 auto 43px
+         +f('gil-500')
+         font-size: 24px
+         line-height: 30px
+         color: #fff
+         +sm
+            max-width: 540px
+            font-size: 18px
+            line-height: 24px
+         +xs
+            padding: 0 15px
+            line-height: 22px
+         br
+            +xs
+               display: none
+
+// *** begin team *** //
+.team
+   padding: 143px 0 97px
+   +md
+      padding: 150px 0 175px
+   +sm
+      padding: 125px 0 70px
+   +xs
+      padding: 77px 0 100px
+   &__top-text
+      position: relative
+      z-index: 1
+      transform: translateY(200px)
+      max-width: 550px
+      margin: 0 auto 97px
+      text-align: center
+      +sm
+         margin: 0 auto 50px
+      +xs
+         margin: 0 auto 40px
+   &__title
+      margin-bottom: 22px
+      +xs
+         margin-bottom: 15px
+   &__descr
+      +xs
+         padding: 0 15px
+         font-size: 14px
+         line-height: 20px
+   &__list
+      display: flex
+      justify-content: center
+      margin: 0 -26px 70px
+      +sm
+         flex-direction: column
+         align-items: center
+         margin: 0 -26px 65px
+      +xs
+         margin: 0 -26px 58px
+   &__person
+      $parent: &
+      display: flex
+      flex: 0 1 50%
+      align-items: center
+      padding: 0 26px
+      +sm
+         flex: 0 1 auto
+      +xs
+         flex-direction: column
+         opacity: 0
+      &:not(:last-child)
+         +xs
+            margin-bottom: 50px
+         
+      &_left
+         transform: translateX(-200px)
+         text-align: right
+         +sm
+            max-width: 570px
+      &_right
+         transform: translateX(200px)
+         +sm
+            max-width: 610px
+            
+      &-data
+         margin-top: 13px
+         +xs
+            text-align: center
+         #{$parent}_left &
+            margin-right: 2px
+            +md
+               margin-top: -90px
+            +sm
+               margin-right: 0
+               padding-left: 30px
+            +xs
+               margin: 0
+               padding: 0
+               order: 1
+         #{$parent}_right &
+            margin-left: -5px
+            padding-right: 10px
+            +md
+               margin-top: -65px
+            +sm
+               padding-right: 90px
+            +xs
+               margin: 0
+               padding: 0
+   
+      &-img
+         flex: 0 0 270px
+         height: 345px
+         +cover-img
+         +xs
+            margin-bottom: 25px
+      &-name
+         margin-bottom: 10px
+         +f('gil-700', 18, 28)
+      &-descr
+         margin-bottom: 20px
+         +xs
+            max-width: 220px
+      &-socials
+         +xs
+            justify-content: center
+         #{$parent}_left &
+            justify-content: flex-end
+            +xs
+               justify-content: center
+         
+   &__squad
+      &-title
+         margin-bottom: 60px
+         text-align: center
+         +xs
+            margin-bottom: 30px
+   
+      &-list
+         display: none
+         transform: translateY(100px)
+         padding: 0 78px
+         +md
+            padding: 0 0 0 20px
+         +sm
+            padding: 0 0 0 15px
+         +xs
+            padding: 0
+            max-width: 290px
+            margin: 0 auto
+         &.slick-initialized
+            display: block
+            
+         .slick-list
+            margin: 0 -29px
+            +md
+               margin: 0 -15px
+         .slider-btn
+            top: 35%
+            +md
+               top: calc(100% + 80px)
+            +sm
+               display: none!important
+            &_prev
+               +md
+                  left: calc(50% - 60px)
+            &_next
+               +md
+                  right: calc(50% - 60px)
+                  
+         .slick-dots
+            bottom: -58px
+               
+      &-person
+         $parent: &
+         position: relative
+         padding: 0 29px
+         text-align: center
+         +md
+            padding: 0 46px
+         +xs
+            padding: 0 51px
+         &-img
+            height: 268px
+            margin-bottom: 30px
+            +cover-img
+            +sm
+               margin-bottom: 37px
+         &-name
+            @extend .team__person-name
+            margin-bottom: 5px
+         &-descr
+            margin-bottom: 25px
+            font-size: 16px
+            line-height: 24px
+         &-btn
+            opacity: 0
+            transform: translate3d(-50%, -20px, 0)
+            position: absolute
+            top: 245px
+            left: 50%
+            padding: 14px 10px
+            min-width: 270px
+            font-size: 12px
+            letter-spacing: .9px
+            transition: .5s ease
+            +md
+               opacity: 1
+               transform: translate3d(-50%, 0, 0)
+            .no-touch #{$parent}:hover &
+               opacity: 1
+               transform: translate3d(-50%, 0, 0)
+         &-socials
+            justify-content: center
+// end team //
+
+// *** begin career *** //
+.career
+   display: flex
+   +sm
+      flex-wrap: wrap
+   +xs
+      flex-direction: column
+   &__item
+      $parent: &
+      position: relative
+      display: flex
+      flex: 0 1 50%
+      +sm
+         flex: 1 0 auto
+      &::after
+         +coverdiv
+         width: 50%
+         z-index: -1
+         content: ''
+      &:nth-child(1n)
+         justify-content: flex-end
+         background-color: #b9c0cc
+         
+      &:nth-child(2n)
+         justify-content: flex-start
+         background-color: #a7aebb
+         
+      &-inner
+         max-width: 720px
+         padding: 45px 60px 50px 120px
+         +md
+            padding: 45px 40px 50px 42px
+         +sm
+            padding: 45px 40px 40px 42px
+            max-width: none
+            width: 100%
+         +xs
+            padding: 45px 30px 33px 42px
+      &-sub-title
+         margin-bottom: 25px
+         +f('gil-700', 12)
+         letter-spacing: 1px
+         text-transform: uppercase
+         +sm
+            margin-bottom: 15px
+         +xs
+            margin-bottom: 12px
+      &-title
+         flex: 0 1 275px
+         +f('gil-700', 30, 36)
+         color: #fff
+         +sm
+            flex: 0 1 auto
+         +xs
+            width: 210px
+            margin-bottom: 15px
+            font-size: 24px
+            line-height: 28px
+         
+         &-wrap
+            display: flex
+            align-items: flex-end
+            justify-content: space-between
+            +xs
+               flex-direction: column
+               align-items: flex-start
+      &-link
+         position: relative
+         top: 3px
+// end career //
+
+// *** begin events *** //
+.events
+   padding: 105px 0 65px
+   background-color: #f5f5f5
+   +md
+      padding: 125px 0 40px
+   +sm
+      padding: 120px 0 40px
+   +xs
+      padding: 50px 0 40px
+   &__container
+      +md
+         padding: 0 30px
+      +sm
+         padding: 0 20px
+      +xs
+         padding: 0 10px
+   
+   &__back-title
+      top: -60px
+   &__top-text
+      max-width: 630px
+      margin: 0 auto 50px
+      text-align: center
+      +sm
+         margin: 0 auto 42px
+      +xs
+         margin: 0 auto 25px
+   &__title
+      margin-bottom: 20px
+   &__descr
+      line-height: 28px
+      +xs
+         padding: 0 15px
+         font-size: 14px
+         line-height: 20px
+   &__tabs
+      +sm
+         text-align: center
+      &-inner
+         margin: 0 -15px
+         +xs
+            margin: 0
+   
+   &__grid-sizer
+      float: left
+      
+   &__item
+      width: calc(33.333333% - 30px)
+      margin: 0 15px 30px
+      position: relative
+      padding-bottom: 10px
+      text-align: left
+      background: #fff
+      +md
+         width: calc(50% - 30px)
+      +xs
+         width: 100%
+         margin: 0 0 30px
+         
+      &.is-hidden
+         display: none
+      &-label
+         position: absolute
+         top: 20px
+         right: 20px
+         +xs
+            right: 10px
+            
+      &-text
+         padding: 0 32px 20px
+         +sm
+            padding: 0 25px 20px
+   
+      &-author
+         display: flex
+         margin-bottom: 25px
+         padding: 35px 30px 0
+         &-img
+            flex: 0 0 50px
+            height: 50px
+            margin-right: 13px
+            overflow: hidden
+            border-radius: 50%
+         &-text
+            flex: 0 1 160px
+            +f('gil-700', 16, 22)
+            
+      &-img
+         height: 220px
+         margin-bottom: 30px
+         +cover-img
+      &-descr
+         margin: 0 25px 25px 0
+         line-height: 28px
+         +xs
+            font-size: 16px
+            line-height: 22px
+            margin: 0 30px 30px 0
+      &-info
+         margin: 0 -10px
+         &-el
+            display: inline-flex
+            align-items: center
+            padding: 0 10px
+            +f('gil-600', 16)
+            svg
+               margin-right: 5px
+            span
+               white-space: nowrap
+               &:not(:last-child)
+                  margin-right: 10px
+
+      &-action
+         margin-top: 40px
+         +f('gil-700', 13)
+         letter-spacing: 1px
+         text-align: center
+         text-transform: uppercase
+         color: #f7b1ce
+         > a
+            +trs
+            .no-touch &:hover
+               color: #e65588
+               
+   &__more
+      text-align: center
+      &-btn
+// end events //

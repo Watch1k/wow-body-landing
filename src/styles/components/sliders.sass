@@ -1,0 +1,66 @@
+.slider-btn
+   position: absolute
+   top: 50%
+   z-index: 1
+   margin-top: -25px
+   width: 50px
+   height: 50px
+   background: #b9c0cc
+   overflow: hidden
+   border-radius: 50%
+   transition: .3s ease
+   &::after
+      +coverdiv
+      z-index: -1
+      background: darken(#b9c0cc, 20)
+      transform: scale(0)
+      opacity: 0
+      transition: .3s ease-out
+      border-radius: 50%
+      content: ''
+   &:hover::after
+      opacity: 1
+      transform: scale(1)
+   &.slick-disabled
+      opacity: .6
+      &::after
+         display: none
+   &_prev
+      left: 0
+   &_next
+      right: 0
+      
+.slick-dots
+   position: absolute
+   left: 0
+   right: 0
+   bottom: 0
+   font-size: 0
+   text-align: center
+   li
+      display: inline-block
+      vertical-align: middle
+      &:not(:last-child)
+         margin-right: 10px
+      &.slick-active button
+         transform: scale(1.7)
+         border-color: #f7b1ce
+         background: $white
+      
+      button
+         width: 10px
+         height: 10px
+         background-color: #f7b1ce
+         border-radius: 50%
+         border: 1px solid transparent
+         transition: .6s ease
+   
+   &_white
+      li
+         &:not(:last-child)
+            margin-right: 15px
+         &.slick-active button
+            border-color: $white
+            background-color: #f7b1ce
+         button
+            background-color: $white
