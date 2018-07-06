@@ -3,48 +3,76 @@
    +xs
       padding: 30px 0 40px
    
-   blockquote
-      margin: 37px 0
-      font-size: 24px
-      line-height: 36px
-      +xs
-         margin: 20px 0
-         font-size: 20px
-         line-height: 30px
-   
-   &__container
-      max-width: 956px
-   &__inner
-      max-width: 718px
-      margin: 0 auto
-      &:not(:last-child)
-         margin-bottom: 50px
-         +xs
-            margin-bottom: 30px
+   &__content
+      
       > * + *
-         margin-top: 30px
-         +xs
+         margin-top: 32px
+         +md
+            margin-top: 27px
+         +sm
             margin-top: 20px
-      > p
+   
+      blockquote
+         padding: 0 105px
+         margin: 37px 0
+         font-size: 24px
+         line-height: 36px
+         +sm
+            padding: 0 65px
+         +xs
+            margin: 20px 0
+            padding: 0
+            font-size: 20px
+            line-height: 30px
+            
+      b, strong
+         +f('gil-700')
+         
+      p
+         padding: 0 105px
          font-size: 14px
          line-height: 26px
          color: #373839
-         & + &
+         +sm
+            padding: 0 65px
+         +xs
+            padding: 0
+      a
+         color: #f7b1ce
+         +trs
+         &:hover
+            color: #e65588
+            
+      > img + *
+         margin-top: 60px
+         +sm
+            margin-top: 45px
+         +xs
             margin-top: 30px
-         a
-            color: #f7b1ce
-            +trs
-            &:hover
-               color: #e65588
-               
+            
+      > * + h2,
+      > * + h3
+         margin-top: 50px!important
+         +sm
+            margin-top: 35px !important
+            
+      img
+         +sm
+            padding: 0 30px
+   
+   &__container
+      max-width: 956px
+      
    &__top
       margin-bottom: 35px
-      +xs
-         margin-bottom: 0
+      +sm
+         margin-bottom: 20px
+         
    &__back-link
       color: #b9c0cc
       span
          margin-left: 22px
+         
    &__title
       display: flex
       align-items: flex-start
@@ -60,16 +88,6 @@
             line-height: 24px
       &-label
          margin-top: 5px
-         
-   &__img
-      margin-bottom: 60px
-      +ratio(926, 616)
-      +cover
-      +sm
-         margin: 0 30px 50px
-         +ratio(678, 450)
-      +xs
-         margin: 0 0 30px
    
    &__slider
       display: none
@@ -80,7 +98,6 @@
          padding: 0
       &.slick-initialized
          display: block
-      &-item
       &-img
          +ratio(926, 616)
          +cover
@@ -103,15 +120,25 @@
       .slick-dots li.slick-active button
          border-color: #47505c
          background: #fff
+         
    &__actions
       display: flex
       align-items: center
       justify-content: space-between
+      max-width: 716px
+      margin: 50px auto 0
       +xs
          flex-direction: column
          margin-top: 30px
          
    &__share
       +xs
-         order: -1
          margin-bottom: 20px
+         order: -1
+
+   &__top, &__title
+      padding: 0 105px
+      +sm
+         padding: 0 65px
+      +xs
+         padding: 0
