@@ -47,7 +47,7 @@
          margin-left: 22px
    &__title
       display: flex
-      align-items: center
+      align-items: flex-start
       margin-bottom: -10px
       + p
          line-height: 30px
@@ -58,6 +58,8 @@
          +xs
             font-size: 22px
             line-height: 24px
+      &-label
+         margin-top: 5px
          
    &__img
       margin-bottom: 60px
@@ -110,5 +112,6 @@
          margin-top: 30px
          
    &__share
-      order: -1
-      margin-bottom: 20px
+      +xs
+         order: -1
+         margin-bottom: 20px
