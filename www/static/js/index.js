@@ -20326,6 +20326,7 @@ var Preloader = function () {
 
       this.resolve = new Promise(function (resolve) {
 
+        resolve();
         var tl = new _gsap.TimelineMax({
           onComplete: function onComplete() {
             resolve();
@@ -35537,7 +35538,7 @@ __webpack_require__(348);
 
 __webpack_require__(349);
 
-__webpack_require__(350);
+__webpack_require__(372);
 
 __webpack_require__(352);
 
@@ -39972,68 +39973,7 @@ var Footer = function () {
 exports.default = new Footer();
 
 /***/ }),
-/* 350 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _helpers = __webpack_require__(15);
-
-var _vintagePopup = __webpack_require__(351);
-
-var _vintagePopup2 = _interopRequireDefault(_vintagePopup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Popups = function () {
-  function Popups() {
-    _classCallCheck(this, Popups);
-
-    this.$popup = $('[data-popup-target]');
-
-    this.init();
-  }
-
-  _createClass(Popups, [{
-    key: 'init',
-    value: function init() {
-      this.$popup.on('click tap', function (e) {
-        e.preventDefault();
-        _helpers.$header.addClass(_helpers.css.noTransition);
-      });
-
-      $('.js-modal-close').on('click tap', function (e) {
-        e.preventDefault();
-        _helpers.$header.removeClass(_helpers.css.noTransition);
-      });
-
-      this.$popup.popup({
-        closeOnEsc: false,
-        closeBtnSelector: '.js-popup-close',
-        lockScreenEl: 'body, header',
-        afterClose: function afterClose() {
-          _helpers.$header.removeClass(_helpers.css.noTransition);
-        }
-      });
-    }
-  }]);
-
-  return Popups;
-}();
-
-exports.default = new Popups();
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
-
-/***/ }),
+/* 350 */,
 /* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41025,60 +40965,129 @@ $('.js-dot').find('*').each(function (i, el) {
 /* WEBPACK VAR INJECTION */(function($) {
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _vintagePopup = __webpack_require__(351);
+
+var _vintagePopup2 = _interopRequireDefault(_vintagePopup);
+
 var _helpers = __webpack_require__(15);
+
+var _gsap = __webpack_require__(31);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Form = function () {
-	function Form() {
-		_classCallCheck(this, Form);
+  function Form() {
+    _classCallCheck(this, Form);
 
-		this.$form = $('.form');
-		this.$input = this.$form.find('.form-control');
-		this.$textarea = this.$form.find('.form-textarea');
+    this.$form = $('.form');
+    this.$input = this.$form.find('.form-control');
+    this.$textarea = this.$form.find('.form-textarea');
+    this.$tyBtn = this.$form.find('.js-init-ty');
+    this.$fileBlock = this.$form.find('.form-group_upload');
+    this.$fileInput = this.$fileBlock.find('input');
+    this.$fileRemoveBtn = this.$fileBlock.find('.remove-file-btn');
 
-		this.init();
-	}
+    this.init();
+  }
 
-	_createClass(Form, [{
-		key: 'init',
-		value: function init() {
-			this.checkFill();
-			this.removeError();
-		}
-	}, {
-		key: 'checkFill',
-		value: function checkFill() {
-			this.$input.add(this.$textarea).each(function () {
-				checkInput($(this));
-			});
-			this.$input.add(this.$textarea).blur(function () {
-				checkInput($(this));
-			});
+  _createClass(Form, [{
+    key: 'init',
+    value: function init() {
+      this.checkFill();
+      this.removeError();
+      this.initFileHandler();
+      this.initPopupThanks();
+    }
+  }, {
+    key: 'checkFill',
+    value: function checkFill() {
+      this.$input.add(this.$textarea).each(function () {
+        checkInput($(this));
+      });
+      this.$input.add(this.$textarea).blur(function () {
+        checkInput($(this));
+      });
 
-			function checkInput(el) {
-				if (el.val() !== '') {
-					el.addClass(_helpers.css.fill);
-				} else {
-					el.removeClass(_helpers.css.fill);
-				}
-			}
-		}
-	}, {
-		key: 'removeError',
-		value: function removeError() {
-			this.$input.on('click focus', function (ev) {
-				$(ev.currentTarget).parent().removeClass(_helpers.css.error);
-			});
-		}
-	}]);
+      function checkInput(el) {
+        if (el.val() !== '') {
+          el.addClass(_helpers.css.fill);
+        } else {
+          el.removeClass(_helpers.css.fill);
+        }
+      }
+    }
+  }, {
+    key: 'removeError',
+    value: function removeError() {
+      this.$input.on('click focus', function (ev) {
+        $(ev.currentTarget).parent().removeClass(_helpers.css.error);
+      });
+    }
+  }, {
+    key: 'initFileHandler',
+    value: function initFileHandler() {
+      var _this = this;
 
-	return Form;
+      this.$fileInput.on('change', function () {
+        if ($(this).val()) {
+          _this.$fileBlock.addClass(_helpers.css.active);
+        }
+      });
+
+      this.$fileRemoveBtn.on('click', function () {
+        _this.$fileInput.replaceWith(_this.$fileInput.val('').clone(true));
+        _this.$fileBlock.removeClass(_helpers.css.active);
+      });
+    }
+  }, {
+    key: 'initTy',
+    value: function initTy() {
+      var modalContainer = document.getElementById();
+      var content = modalContainer.querySelector('.content');
+      var contentShow = modalContainer.querySelector('.content-show');
+      var close = modalContainer.querySelector('.modal__close');
+
+      new _gsap.TimelineMax({
+        onComplete: function onComplete() {
+          new _gsap.TimelineMax().add(function () {
+            close.click();
+          }, 2).set(contentShow, { autoAlpha: 0 }, 2.5).set(content, { autoAlpha: 1 }, 2.5).add(function () {
+            content.querySelector('.form').reset();
+          }, 2.5);
+        }
+      }).to(content, 0.5, { autoAlpha: 0 }).to(contentShow, 0.5, { autoAlpha: 1 });
+    }
+  }, {
+    key: 'initPopupThanks',
+    value: function initPopupThanks() {
+      var _this = this;
+
+      this.$tyBtn.on('submit', function (e) {
+        e.preventDefault();
+        var $thisForm = $(this).closest('form')[0];
+
+        _vintagePopup2.default.closeAllPopups();
+        var popupInstance = $('.thanks-popup__btn').popup();
+        popupInstance.open();
+
+        setTimeout(function () {
+          popupInstance.close();
+        }, 2000);
+
+        $thisForm.reset();
+        _this.checkFill();
+      });
+    }
+  }]);
+
+  return Form;
 }();
 
 exports.default = new Form();
@@ -43535,13 +43544,6 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/**
- * Website's public API (example).
- * Make some functions and methods accessible in global scope.
- *
- * @module PublicAPI
- */
-
 var PublicAPI = exports.PublicAPI = function PublicAPI() {
   _classCallCheck(this, PublicAPI);
 };
@@ -43798,6 +43800,71 @@ var Team = function () {
 }();
 
 exports.default = new Team();
+
+/***/ }),
+/* 372 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PopupsAPI = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _gsap = __webpack_require__(31);
+
+var _helpers = __webpack_require__(15);
+
+var _vintagePopup = __webpack_require__(351);
+
+var _vintagePopup2 = _interopRequireDefault(_vintagePopup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Popups = function () {
+  function Popups() {
+    _classCallCheck(this, Popups);
+
+    this.$popup = $('[data-popup-target]');
+
+    this.init();
+  }
+
+  _createClass(Popups, [{
+    key: 'init',
+    value: function init() {
+      this.$popup.on('click tap', function (e) {
+        e.preventDefault();
+        _helpers.$header.addClass(_helpers.css.noTransition);
+      });
+
+      $('.js-modal-close').on('click tap', function (e) {
+        e.preventDefault();
+        _helpers.$header.removeClass(_helpers.css.noTransition);
+      });
+
+      this.$popup.popup({
+        closeOnEsc: false,
+        closeBtnSelector: '.js-popup-close',
+        lockScreenEl: 'body, header',
+        afterClose: function afterClose() {
+          _helpers.$header.removeClass(_helpers.css.noTransition);
+        }
+      });
+    }
+  }]);
+
+  return Popups;
+}();
+
+var PopupsAPI = exports.PopupsAPI = new Popups();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
 
 /***/ })
 /******/ ]);

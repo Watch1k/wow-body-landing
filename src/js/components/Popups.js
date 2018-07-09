@@ -1,3 +1,4 @@
+import { TimelineMax, TweenMax } from 'gsap';
 import { $header, css } from '../modules/dev/_helpers';
 import Popup from 'vintage-popup';
 
@@ -30,4 +31,4 @@ class Popups {
   }
 }
 
-export default new Popups();
+export const PopupsAPI = new Popups();

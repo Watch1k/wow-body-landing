@@ -5,7 +5,7 @@ import './Header';
 import './Sliders';
 import './Anims';
 import './Footer';
-import './Popup';
+import './Popups';
 import './CTabs';
 import PageResize from './pageResize';
 import './Dot';

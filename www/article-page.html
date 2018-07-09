@@ -284,7 +284,7 @@ C444.819,130.287,441.295,121.629,434.252,114.203z" /> </svg>
               </div>
               <div class="help-block">Необходимо заполнить «Почта».</div>
             </div>
-            <label class="form-submit-btn btn btn_lg btn_purple">
+            <label class="form-submit-btn btn btn_lg btn_purple js-init-ty">
               <span>сообщить о запуске</span>
               <input type="submit" value="" />
             </label>
@@ -363,7 +363,7 @@ C444.819,130.287,441.295,121.629,434.252,114.203z" /> </svg>
                 <div class="help-block">Необходимо заполнить «Ваш вопрос».</div>
               </div>
               <div class="connect__form-submit-wrap connect__form-submit-wrap_default">
-                <label class="form-submit-btn btn btn_lg btn_pink">
+                <label class="form-submit-btn btn btn_lg btn_pink js-init-ty">
                   <span>Отправить</span>
                   <input type="submit" value="" />
                 </label>
@@ -457,15 +457,57 @@ C444.819,130.287,441.295,121.629,434.252,114.203z" /> </svg>
                   <span>Прикрепить резюме</span>
                   <input type="file" accept=".doc, .docx, .ppt, .pptx, .txt, .pdf" />
                 </label>
+                <button class="remove-file-btn" type="button">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 443 443" style="enable-background:new 0 0 443 443;" xml:space="preserve">
+                    <path d="M321.785,38h-83.384V0H125.169v38H41.785v60h280V38z M155.169,30h53.232v8h-53.232V30z"></path>
+                    <path d="M295.142,214.31l5.66-86.31H62.769l19.016,290h114.172c-14.861-21.067-23.602-46.746-23.602-74.43											C172.355,274.43,226.849,217.779,295.142,214.31z"></path>
+                    <path d="M301.785,244.141c-54.826,0-99.43,44.604-99.43,99.429S246.959,443,301.785,443s99.43-44.604,99.43-99.43											S356.611,244.141,301.785,244.141z M355.961,376.533l-21.213,21.213l-32.963-32.963l-32.963,32.963l-21.213-21.213l32.963-32.963											l-32.963-32.963l21.213-21.213l32.963,32.963l32.963-32.963l21.213,21.213l-32.963,32.963L355.961,376.533z"></path>
+                  </svg>
+                  <span>Удалить файл</span>
+                </button>
               </div>
               <div class="connect__form-submit-wrap">
-                <label class="form-submit-btn btn btn_lg btn_pink">
+                <label class="form-submit-btn btn btn_lg btn_pink js-init-ty">
                   <span>Отправить</span>
                   <input type="submit" value="" />
                 </label>
               </div>
             </form>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_xs" data-popup-id="thanks-popup" tabindex="-1" role="dialog">
+      <div class="popup__container">
+        <button class="popup__close js-popup-close" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewbox="0 0 25 25">
+            <defs>
+              <path id="bpq2a" d="M1220.63 158l-1.38-1.4 10.38-10.5 1.38 1.4z"></path>
+              <path id="bpq2b" d="M1230.72 147.49l-1.37 1.39-10.35-10.5 1.37-1.4z"></path>
+              <path id="bpq2c" d="M1238.37 137l1.38 1.4-10.38 10.5-1.38-1.4z"></path>
+              <path id="bpq2d" d="M1228.28 147.51l1.37-1.4 10.35 10.5-1.37 1.4z"></path>
+            </defs>
+            <g>
+              <g transform="translate(-1217 -135)">
+                <g>
+                  <use xlink:href="#bpq2a"></use>
+                </g>
+                <g>
+                  <use xlink:href="#bpq2b"></use>
+                </g>
+                <g>
+                  <use xlink:href="#bpq2c"></use>
+                </g>
+                <g>
+                  <use xlink:href="#bpq2d"></use>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <div class="thanks-popup">
+          <p>Спасибо, ваша заявка отправлена!</p>
+          <button class="thanks-popup__btn" type="button" data-popup-target="thanks-popup"></button>
         </div>
       </div>
     </div>

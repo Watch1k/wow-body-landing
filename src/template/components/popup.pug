@@ -33,7 +33,7 @@ mixin popup(el)
 									span Email
 								+b.help-block Необходимо заполнить «Почта».
 
-							+b.LABEL.form-submit-btn.btn._lg._purple
+							+b.LABEL.form-submit-btn.btn._lg._purple.js-init-ty
 								span сообщить о запуске
 								+e.INPUT(type='submit' value='')
 
@@ -92,7 +92,7 @@ mixin popup(el)
 									+b.help-block Необходимо заполнить «Ваш вопрос».
 
 								+e.form-submit-wrap._default
-									+b.LABEL.form-submit-btn.btn._lg._pink
+									+b.LABEL.form-submit-btn.btn._lg._pink.js-init-ty
 										span Отправить
 										+e.INPUT(type='submit' value='')
 
@@ -159,11 +159,44 @@ mixin popup(el)
 											g(fill-rule='evenodd' stroke='none' stroke-width='1')
 												g(transform='translate(-768.000000, -432.000000)')
 													path(d='M769,446 L781,446 L781,443 L783,443 L783,446 L783,448 L769,448 Z M769,443 L771,443 L771,446 L769,446 Z M778,438 L778,445 L774,445 L774,438 L772,438 L776,433 L780,438 Z M778,438')
-
 										span Прикрепить резюме
 										input(type='file' accept=".doc, .docx, .ppt, .pptx, .txt, .pdf")
+									+b.BUTTON.remove-file-btn(type='button')
+										svg(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 443 443' style='enable-background:new 0 0 443 443;' xml:space='preserve')
+											path(d='M321.785,38h-83.384V0H125.169v38H41.785v60h280V38z M155.169,30h53.232v8h-53.232V30z')
+											path(d='M295.142,214.31l5.66-86.31H62.769l19.016,290h114.172c-14.861-21.067-23.602-46.746-23.602-74.43\
+											C172.355,274.43,226.849,217.779,295.142,214.31z')
+											path(d='M301.785,244.141c-54.826,0-99.43,44.604-99.43,99.429S246.959,443,301.785,443s99.43-44.604,99.43-99.43\
+											S356.611,244.141,301.785,244.141z M355.961,376.533l-21.213,21.213l-32.963-32.963l-32.963,32.963l-21.213-21.213l32.963-32.963\
+											l-32.963-32.963l21.213-21.213l32.963,32.963l32.963-32.963l21.213,21.213l-32.963,32.963L355.961,376.533z')
+										span Удалить файл
 
 								+e.form-submit-wrap
-									+b.LABEL.form-submit-btn.btn._lg._pink
+									+b.LABEL.form-submit-btn.btn._lg._pink.js-init-ty
 										span Отправить
 										+e.INPUT(type='submit' value='')
+
+		when 'thanks-popup'
+			+b.popup._xs(data-popup-id='thanks-popup' tabindex='-1', role='dialog')
+				+e.container
+					+e.BUTTON.close.js-popup-close(type='button')
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='25', height='25', viewbox='0 0 25 25')
+							defs
+								path#bpq2a(d='M1220.63 158l-1.38-1.4 10.38-10.5 1.38 1.4z')
+								path#bpq2b(d='M1230.72 147.49l-1.37 1.39-10.35-10.5 1.37-1.4z')
+								path#bpq2c(d='M1238.37 137l1.38 1.4-10.38 10.5-1.38-1.4z')
+								path#bpq2d(d='M1228.28 147.51l1.37-1.4 10.35 10.5-1.37 1.4z')
+							g
+								g(transform='translate(-1217 -135)')
+									g
+										use(xlink:href='#bpq2a')
+									g
+										use(xlink:href='#bpq2b')
+									g
+										use(xlink:href='#bpq2c')
+									g
+										use(xlink:href='#bpq2d')
+
+					+b.thanks-popup
+						+e.P Спасибо, ваша заявка отправлена!
+						+e.BUTTON.btn(type='button' data-popup-target="thanks-popup")

@@ -46,7 +46,15 @@
          &:last-child
             margin-bottom: 24px
       &_upload
+         position: relative
          text-align: left
+         &.is-active .add-file-btn
+            opacity: 0
+            pointer-events: none
+         &.is-active .remove-file-btn
+            opacity: 1
+            transform: translateY(0)
+            pointer-events: auto
          
    &-control
       display: block
@@ -129,3 +137,48 @@
       display: block
       +trs
       
+.add-file-btn
+   display: inline-flex
+   align-items: center
+   +f('gil-600', 16, 24)
+   color: #f7b1ce
+   cursor: pointer
+   +trs
+   &:hover
+      color: #e65588
+      svg
+         fill: #e65588
+   svg
+      width: 17px
+      height: 20px
+      margin-right: 14px
+      fill: #f7b1ce
+      +gpu
+      +trs
+   input
+      display: none
+
+.remove-file-btn
+   position: absolute
+   top: 0
+   left: 10px
+   opacity: 0
+   transform: translateX(10px)
+   display: flex
+   align-items: center
+   +f('gil-600', 16, 24)
+   color: #f7b1ce
+   cursor: pointer
+   pointer-events: none
+   transition: .3s ease
+   &:hover
+      color: #e65588
+      svg
+         fill: #e65588
+   svg
+      width: 18px
+      height: 20px
+      margin-right: 11px
+      fill: #f7b1ce
+      +gpu
+      +trs

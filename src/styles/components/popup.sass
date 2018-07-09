@@ -45,6 +45,10 @@
     +xs
       top: 10px
       right: 12px
+    #{$parent}_xs &
+      top: 15px
+      right: 15px
+      
     &:hover svg
       fill: #000
     svg
@@ -72,7 +76,9 @@
       padding: 100px 4px 100px 14px
     #{$parent}_sm &
       max-width: 720px
-      
+    #{$parent}_xs &
+      max-width: 500px
+
 body.popup-opened
   overflow: hidden
   //+md
@@ -161,3 +167,18 @@ body.popup-opened
       +xs
         width: 290px
         margin:  0 auto 30px
+
+.thanks-popup
+  max-width: 460px
+  margin: 0 auto
+  padding: 55px 30px 65px
+  text-align: center
+  font-size: 16px
+  line-height: 26px
+  letter-spacing: 1px
+  +xs
+    padding: 50px 10px 40px
+    font-size: 14px
+    line-height: 22px
+  &__btn
+    display: none
