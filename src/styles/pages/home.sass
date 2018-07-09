@@ -569,6 +569,7 @@
       +sm
          margin: 0 auto 50px
       +xs
+         transform: translateY(100px)
          margin: 0 auto 40px
    &__title
       margin-bottom: 22px
@@ -595,6 +596,7 @@
       flex: 0 1 50%
       align-items: center
       padding: 0 26px
+      opacity: 0
       +sm
          flex: 0 1 auto
       +xs
@@ -609,10 +611,14 @@
          text-align: right
          +sm
             max-width: 570px
+         +xs
+            transform: translateY(100px)
       &_right
          transform: translateX(200px)
          +sm
             max-width: 610px
+         +xs
+            transform: translateY(100px)
             
       &-data
          margin-top: 13px
@@ -726,8 +732,7 @@
             font-size: 16px
             line-height: 24px
          &-btn
-            opacity: 0
-            transform: translate3d(-50%, -20px, 0)
+            transform: translate3d(-50%, 0, 0)
             position: absolute
             top: 245px
             left: 50%
@@ -736,12 +741,6 @@
             font-size: 12px
             letter-spacing: .9px
             transition: .5s ease
-            +md
-               opacity: 1
-               transform: translate3d(-50%, 0, 0)
-            .no-touch #{$parent}:hover &
-               opacity: 1
-               transform: translate3d(-50%, 0, 0)
          &-socials
             justify-content: center
 // end team //

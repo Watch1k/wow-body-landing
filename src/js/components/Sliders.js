@@ -77,7 +77,9 @@ class Sliders {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-	          dots: true
+	          dots: true,
+	          speed: 300,
+            cssEase: 'linear'
           }
         }
 			]

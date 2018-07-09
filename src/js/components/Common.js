@@ -13,6 +13,7 @@ import './form';
 import './noTouch';
 
 import '../sections/programs';
+import '../sections/team';
 import '../sections/events';
 import '../sections/shop';
 

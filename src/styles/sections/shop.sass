@@ -15,23 +15,28 @@
       +cover
       
    &__container
+      position: static
       z-index: 2
       padding: 0 15px 140px
       pointer-events: none
+      width: 100%
+      height: 100%
       +xs
-         width: 100%
-         height: 100%
          padding: 0 12px
    &__text
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      max-width: 1920px
+      width: 100%
+      margin: 0 auto
+      padding: 50px 0 145px
       text-align: center
       color: #fff
+      background-image: linear-gradient(to bottom, rgba(71, 80, 92, 0) 15%, rgba(51, 57, 65, 0.4))
       +xs
-         position: absolute
-         left: 0
-         right: 0
-         bottom: 0
          padding-bottom: 95px
-         background-image: linear-gradient(to bottom, rgba(71, 80, 92, 0), #333941)
    &__title
       font-size: 130px
       line-height: 105px
@@ -192,10 +197,14 @@
       &-img-wrap
          flex: 1 1 auto
       &-info
+         display: block
          flex-grow: 1
          padding-left: 15px
          font-size: 16px
          line-height: 22px
+         +trs
+         &:hover
+            color: darken(#47505c, 10)
       &-descr
          margin-bottom: 10px
       &-price

@@ -43,6 +43,8 @@ class Header {
     const offsetTop = Resp.isDesk ? 80 : 60;
 
     this.logo.addEventListener('click', () => {
+      this.header.classList.contains(css.menuActive) ? this.navBtn.click() : false;
+
       TweenMax.to(window, 1.5, {
         scrollTo: { y: 0, autoKill: false }
       });
@@ -50,6 +52,7 @@ class Header {
 
     [...this.navLinks.querySelectorAll('a')].forEach(item => {
       item.addEventListener('click', (e) => {
+        this.body.classList.remove(css.locked);
         if (item.href.indexOf('#') !== -1) {
           e.preventDefault();
           const href = item.href;
@@ -67,6 +70,7 @@ class Header {
 
     [...this.navFooter.querySelectorAll('a')].forEach(item => {
       item.addEventListener('click', (e) => {
+        this.body.classList.remove(css.locked);
         if (item.href.indexOf('#') !== -1) {
           e.preventDefault();
           const href = item.href;
@@ -109,7 +113,11 @@ class Header {
   }
 
   prepareHeaderAnim() {
-    this.mobTl = new TimelineMax({ paused: true });
+    this.mobTl = new TimelineMax({
+      paused: true, onComplete: () => {
+        this.lockBody();
+      }
+    });
 
     this.mobTl
       .to(this.nav, .35, {
@@ -128,7 +136,14 @@ class Header {
   }
 
   toggleNav() {
-    this.burgerActiveState ? this.mobTl.timeScale(1).play() : this.mobTl.timeScale(3).reverse();
+    if (this.burgerActiveState) {
+      this.beforeOpen();
+      this.mobTl.timeScale(1).play();
+    } else {
+      this.beforeClose();
+      this.mobTl.timeScale(3).reverse();
+      this.body.classList.remove(css.locked);
+    }
 
     if (!Resp.isDesk) {
       this.navLinks.querySelectorAll('a').forEach(item => {
@@ -170,7 +185,23 @@ class Header {
     });
   }
 
+  lockBody() {
+    this.body.classList.toggle(css.locked);
+  }
+
+  beforeOpen() {
+    this.scrollTop = window.scrollY;
+    this.scrollTop > 0 ? this.header.classList.add(css.menuActive) : false;
+  }
+
+  beforeClose() {
+    this.body.classList.remove(css.locked);
+    TweenMax.to(window, 0, {
+      scrollTo: { y: this.scrollTop, autoKill: false }
+    });
+    this.header.classList.remove(css.menuActive);
+  }
+
 }
 
 export const HeaderAPI = new Header();
-

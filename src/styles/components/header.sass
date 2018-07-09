@@ -12,7 +12,7 @@
       transform: translate3d(0, 0, 0)
    &.no-transition
       transition: none!important
-   &.is-visible
+   &.is-visible, &.menu-active
       transform: translate3d(0, 0, 0)
    &__inner
       background-color: #47505c
@@ -126,13 +126,19 @@
             align-items: center
             justify-content: center
             overflow: auto
-            margin-top: 68px
-            height: calc(100% - 68px)
+            margin-top: 60px
+            height: calc(100% - 60px)
+            //height: 100%
+         +xs
+            display: block
+   
       &-mob-scroll
          +md
-            padding: 30px 15px
+            padding: 30px 15px 60px
+         +xs
+            padding: 110px 15px 60px
          +mob-fix
-            padding: 220px 15px 100px
+            padding: 130px 15px 80px
             
    &__nav-toggle
       display: none
@@ -253,6 +259,9 @@
             transition: .3s ease
             +md
                box-shadow: none
+            +xs
+               position: static
+               padding: 0 0 15px
             .is-sub &
                background: #b9c0cc
             li

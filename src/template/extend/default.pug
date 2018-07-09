@@ -40,6 +40,10 @@ html(lang='ru')
             block main
                 main
 
+            if toTopBtn
+                .to-top(onclick='')
+                    .to-top__arrows.arrows-down
+
             block modals
                 +popup({name: 'inform-popup'})
                 +popup({name: 'contact-popup'})

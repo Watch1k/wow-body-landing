@@ -1,31 +1,89 @@
 .to-top
-	pointer-events: none
-	position: fixed
-	z-index: 19
-	right: 30px
-	bottom: 30px
-	width: 52px
-	height: 52px
-	display: flex
-	justify-content: center
-	align-items: center
-	cursor: pointer
-	background-color: $color2
-	border-radius: 50%
-	opacity: 0
-	transform: rotate(180deg)
-	box-shadow: 0px 0px 20px 3px rgba(99, 34, 59, 0.1)
-	+trs
-	+sm
-		right: 10px
-		bottom: 10px
-	&:hover
-		background-color: $color1
-	&.is-active
-		pointer-events: auto
-		opacity: 1
-	
-	&__arrows
-		position: relative
-		top: 3px
-		left: 7px
+   pointer-events: none
+   position: fixed
+   z-index: 19
+   right: 30px
+   bottom: 30px
+   width: 52px
+   height: 52px
+   display: flex
+   justify-content: center
+   align-items: center
+   cursor: pointer
+   background-color: #a7aebb
+   border-radius: 50%
+   opacity: 0
+   transform: scale(.5) rotate(180deg)
+   box-shadow: 0 0 20px 3px rgba(99, 34, 59, 0.1)
+   transition: .35s ease
+   &::after
+      +coverdiv
+      z-index: -1
+      background: darken(#a7aebb, 15)
+      transform: scale(0)
+      opacity: 0
+      transition: .25s ease-out
+      border-radius: 50%
+      content: ''
+   +sm
+      right: 10px
+      bottom: 10px
+   .no-touch &:hover::after
+      opacity: 1
+      transform: scale(1)
+   &.is-active
+      pointer-events: auto
+      opacity: 1
+      transform: scale(1) rotate(180deg)
+   &__arrows
+      position: relative
+      top: 3px
+      left: 7px
+
+$arrows-size: 10px
+$arrows-speed: 3s
+$arrows-color: #ffffff
+$peak-opacity: 0.7
+
+.arrows-down
+   width: $arrows-size
+   height: $arrows-size
+   transform: translate(-50%, -50%)
+   &:before, &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      border-left: $arrows-size/3 solid $arrows-color
+      border-bottom: $arrows-size/3 solid $arrows-color
+      opacity: $peak-opacity
+   &:before
+      transform: translate($arrows-size/3, $arrows-size*4/3) rotate(-45deg)
+      animation: arrows $arrows-speed linear infinite
+   &:after
+      transform: translate($arrows-size*2/3, 0px) rotate(-45deg)
+      animation: arrows $arrows-speed linear infinite $arrows-speed/-2
+
+@keyframes arrows
+   0%
+      border-left: $arrows-size/3 solid $arrows-color
+      border-bottom: $arrows-size/3 solid $arrows-color
+      transform: translate($arrows-size/-6, $arrows-size*4/-6) rotate(-45deg)
+      opacity: 0
+   
+   10%, 90%
+      border-left: $arrows-size/3 solid $arrows-color
+      border-bottom: $arrows-size/3 solid $arrows-color
+      opacity: 0
+   
+   50%
+      border-left: $arrows-size/3 solid $arrows-color
+      border-bottom: $arrows-size/3 solid $arrows-color
+      transform: translate($arrows-size/-6, 0px) rotate(-45deg)
+      opacity: $peak-opacity
+   
+   100%
+      border-left: $arrows-size/3 $arrows-color
+      border-bottom: $arrows-size/3 $arrows-color
+      transform: translate($arrows-size/-6, $arrows-size*4/6) rotate(-45deg)
+      opacity: 0

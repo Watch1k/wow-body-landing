@@ -1,7 +1,8 @@
 extends ../extend/default
 
 block variables
-	- var title = 'Home page';
+	- title = 'Home page';
+	- toTopBtn = true;
 
 block main
 	main.content(data-page='home')
@@ -369,14 +370,14 @@ block main
 		//begin team
 		+b.SECTION.team#team
 			+e.container.container
-				+e.top-text(data-anim='fade-y' data-anim-duration='1.2')
+				+e.top-text(data-anim='fade-y' data-anim-duration='1')
 					+e.title.title-md
 						h2 КОМАНДА
 					+e.descr
 						p Мы собрали лучших, чтобы осуществить твою мечту и обрести WOW-тело. Наши специалисты проводят онлайн-консультации и готовы прийти на помощь в любых вопросах.
 
 				+e.list
-					+e.person._left(data-anim='fade-x' data-anim-duration='1.2')
+					+e.person._left
 						+e.person-data
 							+e.person-name
 								h5 Анита Луценко
@@ -386,7 +387,7 @@ block main
 						+e.person-img
 							+e.IMG(src=`static/img/content/team_anita.jpg` alt='image')
 
-					+e.person._right(data-anim='fade-x' data-anim-duration='1.2')
+					+e.person._right
 						+e.person-img
 							+e.IMG(src=`static/img/content/team_julia.jpg` alt='image')
 						+e.person-data
@@ -405,7 +406,8 @@ block main
 							squadList = [{
 							img: 2,
 							name: 'Ольга Черняк',
-							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию',
+							btn: true
 							}, {
 							img: 1,
 							name: 'Татьяна Приходько',
@@ -421,7 +423,8 @@ block main
 							}, {
 							img: 2,
 							name: 'Ольга Черняк',
-							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию'
+							descr: 'Нутрициолог. Эксперт по здоровому, осознанному питанию',
+							btn: true
 							}, {
 							img: 3,
 							name: 'Ольга Черняк',
@@ -439,8 +442,9 @@ block main
 							+e.squad-person
 								+e.squad-person-img
 									+e.IMG(src=`static/img/content/team_person-${person.img}.png` alt='image')
-								+e.BUTTON.squad-person-btn.btn._pink(data-popup-target='contact-popup' type='button')
-									span Записаться на консультацию
+								if person.btn
+									+e.BUTTON.squad-person-btn.btn._pink(data-popup-target='contact-popup' type='button')
+										span Записаться на консультацию
 								+e.squad-person-name
 									h5= person.name
 								+e.squad-person-descr
