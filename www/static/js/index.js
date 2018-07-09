@@ -20326,7 +20326,6 @@ var Preloader = function () {
 
       this.resolve = new Promise(function (resolve) {
 
-        resolve();
         var tl = new _gsap.TimelineMax({
           onComplete: function onComplete() {
             resolve();
@@ -40989,7 +40988,7 @@ var Form = function () {
     this.$form = $('.form');
     this.$input = this.$form.find('.form-control');
     this.$textarea = this.$form.find('.form-textarea');
-    this.$tyBtn = this.$form.find('.js-init-ty');
+    this.$tyBtn = this.$form.find('.js-init-ty').find('input');
     this.$fileBlock = this.$form.find('.form-group_upload');
     this.$fileInput = this.$fileBlock.find('input');
     this.$fileRemoveBtn = this.$fileBlock.find('.remove-file-btn');
@@ -41045,24 +41044,6 @@ var Form = function () {
         _this.$fileInput.replaceWith(_this.$fileInput.val('').clone(true));
         _this.$fileBlock.removeClass(_helpers.css.active);
       });
-    }
-  }, {
-    key: 'initTy',
-    value: function initTy() {
-      var modalContainer = document.getElementById();
-      var content = modalContainer.querySelector('.content');
-      var contentShow = modalContainer.querySelector('.content-show');
-      var close = modalContainer.querySelector('.modal__close');
-
-      new _gsap.TimelineMax({
-        onComplete: function onComplete() {
-          new _gsap.TimelineMax().add(function () {
-            close.click();
-          }, 2).set(contentShow, { autoAlpha: 0 }, 2.5).set(content, { autoAlpha: 1 }, 2.5).add(function () {
-            content.querySelector('.form').reset();
-          }, 2.5);
-        }
-      }).to(content, 0.5, { autoAlpha: 0 }).to(contentShow, 0.5, { autoAlpha: 1 });
     }
   }, {
     key: 'initPopupThanks',

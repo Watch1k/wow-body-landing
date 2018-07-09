@@ -7,7 +7,7 @@ class Form {
     this.$form = $('.form');
     this.$input = this.$form.find('.form-control');
     this.$textarea = this.$form.find('.form-textarea');
-    this.$tyBtn = this.$form.find('.js-init-ty');
+    this.$tyBtn = this.$form.find('.js-init-ty').find('input');
     this.$fileBlock = this.$form.find('.form-group_upload');
     this.$fileInput = this.$fileBlock.find('input');
     this.$fileRemoveBtn = this.$fileBlock.find('.remove-file-btn');
@@ -58,29 +58,6 @@ class Form {
       _this.$fileInput.replaceWith(_this.$fileInput.val('').clone(true));
       _this.$fileBlock.removeClass(css.active);
     });
-  }
-
-  initTy() {
-    const modalContainer = document.getElementById();
-    const content = modalContainer.querySelector('.content');
-    const contentShow = modalContainer.querySelector('.content-show');
-    const close = modalContainer.querySelector('.modal__close');
-
-    new TimelineMax({
-      onComplete() {
-        new TimelineMax()
-          .add(() => {
-            close.click();
-          }, 2)
-          .set(contentShow, { autoAlpha: 0 }, 2.5)
-          .set(content, { autoAlpha: 1 }, 2.5)
-          .add(() => {
-            content.querySelector('.form').reset();
-          }, 2.5);
-      }
-    })
-      .to(content, 0.5, { autoAlpha: 0 })
-      .to(contentShow, 0.5, { autoAlpha: 1 });
   }
 
   initPopupThanks() {
