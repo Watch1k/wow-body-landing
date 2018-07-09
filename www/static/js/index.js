@@ -40988,7 +40988,7 @@ var Form = function () {
     this.$form = $('.form');
     this.$input = this.$form.find('.form-control');
     this.$textarea = this.$form.find('.form-textarea');
-    this.$tyBtn = this.$form.find('.js-init-ty').find('input');
+    this.$thanks = $('.js-submit-ty');
     this.$fileBlock = this.$form.find('.form-group_upload');
     this.$fileInput = this.$fileBlock.find('input');
     this.$fileRemoveBtn = this.$fileBlock.find('.remove-file-btn');
@@ -41050,9 +41050,9 @@ var Form = function () {
     value: function initPopupThanks() {
       var _this = this;
 
-      this.$tyBtn.on('submit', function (e) {
+      this.$thanks.on('submit', function (e) {
         e.preventDefault();
-        var $thisForm = $(this).closest('form')[0];
+        var $this = $(this);
 
         _vintagePopup2.default.closeAllPopups();
         var popupInstance = $('.thanks-popup__btn').popup();
@@ -41062,7 +41062,7 @@ var Form = function () {
           popupInstance.close();
         }, 2000);
 
-        $thisForm.reset();
+        $this[0].reset();
         _this.checkFill();
       });
     }

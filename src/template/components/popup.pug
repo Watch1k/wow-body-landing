@@ -26,14 +26,14 @@ mixin popup(el)
 							p Оставте нам свой email и мы обязательно сообщим вам когда запустится эта программа.
 							p Долго ждать не придется!
 
-						+e.FORM.form.form(action='#!' method='POST')
+						+e.FORM.form.form.js-submit-ty(action='#!' method='POST')
 							+b.form-group.inform__form-group
 								+b.INPUT.form-control(type='email' name='email' required autocomplete="off")
 								+b.control-label
 									span Email
 								+b.help-block Необходимо заполнить «Почта».
 
-							+b.LABEL.form-submit-btn.btn._lg._purple.js-init-ty
+							+b.LABEL.form-submit-btn.btn._lg._purple
 								span сообщить о запуске
 								+e.INPUT(type='submit' value='')
 
@@ -69,7 +69,7 @@ mixin popup(el)
 								+e.descr
 									p Не стесняйтесь, пишите нам по любым вопросам или замечаниям мы всегда открыты к диалогу.
 
-							+e.FORM.form.form._default(action='#!' method='POST')
+							+e.FORM.form.form._default.js-submit-ty(action='#!' method='POST')
 								+b.form-group.has-error
 									+b.INPUT.form-control(type='text' name='name' required autocomplete="off")
 									+b.control-label
@@ -92,7 +92,7 @@ mixin popup(el)
 									+b.help-block Необходимо заполнить «Ваш вопрос».
 
 								+e.form-submit-wrap._default
-									+b.LABEL.form-submit-btn.btn._lg._pink.js-init-ty
+									+b.LABEL.form-submit-btn.btn._lg._pink
 										span Отправить
 										+e.INPUT(type='submit' value='')
 
@@ -131,7 +131,7 @@ mixin popup(el)
 										br
 										| пишите нам, мы всегда в поиске ценных кадров.
 
-							+e.FORM.form.form._default(action='#!' method='POST')
+							+e.FORM.form.form._default.js-submit-ty(action='#!' method='POST')
 								+b.form-group
 									+b.INPUT.form-control(type='text' name='name' required autocomplete="off")
 									+b.control-label
@@ -172,7 +172,7 @@ mixin popup(el)
 										span Удалить файл
 
 								+e.form-submit-wrap
-									+b.LABEL.form-submit-btn.btn._lg._pink.js-init-ty
+									+b.LABEL.form-submit-btn.btn._lg._pink
 										span Отправить
 										+e.INPUT(type='submit' value='')
 

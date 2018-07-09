@@ -7,7 +7,7 @@ class Form {
     this.$form = $('.form');
     this.$input = this.$form.find('.form-control');
     this.$textarea = this.$form.find('.form-textarea');
-    this.$tyBtn = this.$form.find('.js-init-ty').find('input');
+    this.$thanks = $('.js-submit-ty');
     this.$fileBlock = this.$form.find('.form-group_upload');
     this.$fileInput = this.$fileBlock.find('input');
     this.$fileRemoveBtn = this.$fileBlock.find('.remove-file-btn');
@@ -63,9 +63,9 @@ class Form {
   initPopupThanks() {
     const _this = this;
 
-    this.$tyBtn.on('submit', function (e) {
+    this.$thanks.on('submit', function (e) {
       e.preventDefault();
-      const $thisForm = $(this).closest('form')[0];
+      const $this = $(this);
 
       Popup.closeAllPopups();
       const popupInstance = $('.thanks-popup__btn').popup();
@@ -75,7 +75,7 @@ class Form {
         popupInstance.close();
       }, 2000);
 
-      $thisForm.reset();
+      $this[0].reset();
       _this.checkFill();
     });
   }
