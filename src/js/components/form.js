@@ -8,9 +8,7 @@ class Form {
     this.$input = this.$form.find('.form-control');
     this.$textarea = this.$form.find('.form-textarea');
     this.$thanks = $('.js-submit-ty');
-    this.$fileBlock = this.$form.find('.form-group_upload');
-    this.$fileInput = this.$fileBlock.find('input');
-    this.$fileRemoveBtn = this.$fileBlock.find('.remove-file-btn');
+    this.$fileBlock = this.$form.find('.file-block');
 
     this.init();
   }
@@ -47,16 +45,24 @@ class Form {
 
   initFileHandler() {
     const _this = this;
+    const $input = this.$fileBlock.find('input');
+    const $removeBtn = this.$fileBlock.find('.file-block__remove-btn');
+    const $nameField = this.$fileBlock.find('.file-block__name-field');
 
-    this.$fileInput.on('change', function () {
-      if ($(this).val()) {
+    $input.on('change', function (e) {
+      const $target = $(e.target);
+      const fileName = e.target.files[0].name;
+
+      if ($target.val()) {
         _this.$fileBlock.addClass(css.active);
+        $nameField.text(fileName);
       }
     });
 
-    this.$fileRemoveBtn.on('click', function () {
-      _this.$fileInput.replaceWith(_this.$fileInput.val('').clone(true));
+    $removeBtn.on('click', function () {
+      $input.replaceWith($input.val('').clone(true));
       _this.$fileBlock.removeClass(css.active);
+      $nameField.text('');
     });
   }
 
@@ -68,11 +74,11 @@ class Form {
       const $this = $(this);
 
       Popup.closeAllPopups();
-      const popupInstance = $('.thanks-popup__btn').popup();
-      popupInstance.open();
+      const thanskPopInstance = $('.thanks-popup__btn').popup();
+      thanskPopInstance.open();
 
       setTimeout(() => {
-        popupInstance.close();
+        thanskPopInstance.close();
       }, 2000);
 
       $this[0].reset();

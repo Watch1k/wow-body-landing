@@ -45,16 +45,6 @@
             margin-bottom: 24px
          &:last-child
             margin-bottom: 24px
-      &_upload
-         position: relative
-         text-align: left
-         &.is-active .add-file-btn
-            opacity: 0
-            pointer-events: none
-         &.is-active .remove-file-btn
-            opacity: 1
-            transform: translateY(0)
-            pointer-events: auto
          
    &-control
       display: block
@@ -119,7 +109,6 @@
          transform: translateY(20px)
       &:after
          transform: translateX(0)
-   .has-error &-textarea-label
 
 .control-label
    overflow: hidden
@@ -137,48 +126,96 @@
       display: block
       +trs
       
-.add-file-btn
-   display: inline-flex
-   align-items: center
-   +f('gil-600', 16, 24)
-   color: #f7b1ce
-   cursor: pointer
-   +trs
-   &:hover
-      color: #e65588
-      svg
-         fill: #e65588
-   svg
-      width: 17px
-      height: 20px
-      margin-right: 14px
-      fill: #f7b1ce
-      +gpu
+.file-block
+   position: relative
+   text-align: left
+   +xs
+      display: flex
+      flex-direction: column-reverse
+   &__add-btn
+      display: flex
+      align-items: center
+      flex: 1 0 auto
+      +f('gil-600', 16, 24)
+      color: #f7b1ce
+      cursor: pointer
       +trs
-   input
-      display: none
-
-.remove-file-btn
-   position: absolute
-   top: 0
-   left: 10px
-   opacity: 0
-   transform: translateX(10px)
-   display: flex
-   align-items: center
-   +f('gil-600', 16, 24)
-   color: #f7b1ce
-   cursor: pointer
-   pointer-events: none
-   transition: .3s ease
-   &:hover
-      color: #e65588
+      +xs
+         margin-bottom: 5px
+      .is-active &
+         opacity: 0
+         pointer-events: none
+         
+      &:hover
+         color: #e65588
+         svg
+            fill: #e65588
       svg
-         fill: #e65588
-   svg
-      width: 18px
-      height: 20px
-      margin-right: 11px
-      fill: #f7b1ce
-      +gpu
-      +trs
+         flex-shrink: 0
+         width: 17px
+         height: 20px
+         margin-right: 14px
+         fill: #f7b1ce
+         +gpu
+         +trs
+      input
+         display: none
+         
+   &__remove-btn
+      position: absolute
+      top: 0
+      left: 10px
+      opacity: 0
+      transform: translateX(10px)
+      display: flex
+      align-items: center
+      +f('gil-600', 16, 24)
+      color: #f7b1ce
+      cursor: pointer
+      pointer-events: none
+      transition: .3s ease
+      +xs
+         top: auto
+         bottom: 0
+      .is-active &
+         opacity: 1
+         transform: translateY(0)
+         pointer-events: auto
+         
+      &:hover
+         color: #e65588
+         svg
+            fill: #e65588
+      svg
+         flex-shrink: 0
+         width: 18px
+         height: 20px
+         margin-right: 11px
+         fill: #f7b1ce
+         +gpu
+         +trs
+         
+   &__name-field
+      position: absolute
+      top: 0
+      right: 0
+      opacity: 0
+      transform: translateX(-10px)
+      width: 220px
+      transition: .3s ease
+      text-align: right
+      font-size: 15px
+      line-height: 24px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      +sm
+         width: 200px
+      +xs
+         position: static
+         width: 100%
+         height: 25px
+         text-align: left
+      .is-active &
+         opacity: 1
+         transform: translateX(0)

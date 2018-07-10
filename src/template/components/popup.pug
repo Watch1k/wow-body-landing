@@ -153,15 +153,16 @@ mixin popup(el)
 										span О себе
 									+b.help-block Необходимо заполнить «О себе».
 
-								+b.form-group._upload.connect__form-upload
-									+b.LABEL.add-file-btn
+								+b.form-group.connect__form-upload.file-block
+									+b.LABEL.file-block__add-btn
 										svg(height='16px' version='1.1' viewbox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
 											g(fill-rule='evenodd' stroke='none' stroke-width='1')
 												g(transform='translate(-768.000000, -432.000000)')
 													path(d='M769,446 L781,446 L781,443 L783,443 L783,446 L783,448 L769,448 Z M769,443 L771,443 L771,446 L769,446 Z M778,438 L778,445 L774,445 L774,438 L772,438 L776,433 L780,438 Z M778,438')
 										span Прикрепить резюме
 										input(type='file' accept=".doc, .docx, .ppt, .pptx, .txt, .pdf")
-									+b.BUTTON.remove-file-btn(type='button')
+
+									+b.BUTTON.file-block__remove-btn(type='button')
 										svg(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 443 443' style='enable-background:new 0 0 443 443;' xml:space='preserve')
 											path(d='M321.785,38h-83.384V0H125.169v38H41.785v60h280V38z M155.169,30h53.232v8h-53.232V30z')
 											path(d='M295.142,214.31l5.66-86.31H62.769l19.016,290h114.172c-14.861-21.067-23.602-46.746-23.602-74.43\
@@ -170,6 +171,8 @@ mixin popup(el)
 											S356.611,244.141,301.785,244.141z M355.961,376.533l-21.213,21.213l-32.963-32.963l-32.963,32.963l-21.213-21.213l32.963-32.963\
 											l-32.963-32.963l21.213-21.213l32.963,32.963l32.963-32.963l21.213,21.213l-32.963,32.963L355.961,376.533z')
 										span Удалить файл
+
+									.file-block__name-field
 
 								+e.form-submit-wrap
 									+b.LABEL.form-submit-btn.btn._lg._pink
