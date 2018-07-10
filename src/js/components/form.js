@@ -45,24 +45,28 @@ class Form {
 
   initFileHandler() {
     const _this = this;
-    const $input = this.$fileBlock.find('input');
-    const $removeBtn = this.$fileBlock.find('.file-block__remove-btn');
-    const $nameField = this.$fileBlock.find('.file-block__name-field');
 
-    $input.on('change', function (e) {
-      const $target = $(e.target);
-      const fileName = e.target.files[0].name;
+    this.$fileBlock.each(function (i, block) {
+      const $block = $(block);
+      const $input = $block.find('input');
+      const $removeBtn = $block.find('.file-block__remove-btn');
+      const $nameField = $block.find('.file-block__name-field');
 
-      if ($target.val()) {
-        _this.$fileBlock.addClass(css.active);
-        $nameField.text(fileName);
-      }
-    });
+      $input.on('change', function (e) {
+        const $target = $(e.target);
+        const fileName = e.target.files[0].name;
 
-    $removeBtn.on('click', function () {
-      $input.replaceWith($input.val('').clone(true));
-      _this.$fileBlock.removeClass(css.active);
-      $nameField.text('');
+        if ($target.val()) {
+          _this.$fileBlock.addClass(css.active);
+          $nameField.text(fileName);
+        }
+      });
+
+      $removeBtn.on('click', function () {
+        $input.replaceWith($input.val('').clone(true));
+        _this.$fileBlock.removeClass(css.active);
+        $nameField.text('');
+      });
     });
   }
 

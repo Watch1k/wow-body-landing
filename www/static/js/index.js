@@ -41095,24 +41095,28 @@ var Form = function () {
     key: 'initFileHandler',
     value: function initFileHandler() {
       var _this = this;
-      var $input = this.$fileBlock.find('input');
-      var $removeBtn = this.$fileBlock.find('.file-block__remove-btn');
-      var $nameField = this.$fileBlock.find('.file-block__name-field');
 
-      $input.on('change', function (e) {
-        var $target = $(e.target);
-        var fileName = e.target.files[0].name;
+      this.$fileBlock.each(function (i, block) {
+        var $block = $(block);
+        var $input = $block.find('input');
+        var $removeBtn = $block.find('.file-block__remove-btn');
+        var $nameField = $block.find('.file-block__name-field');
 
-        if ($target.val()) {
-          _this.$fileBlock.addClass(_helpers.css.active);
-          $nameField.text(fileName);
-        }
-      });
+        $input.on('change', function (e) {
+          var $target = $(e.target);
+          var fileName = e.target.files[0].name;
 
-      $removeBtn.on('click', function () {
-        $input.replaceWith($input.val('').clone(true));
-        _this.$fileBlock.removeClass(_helpers.css.active);
-        $nameField.text('');
+          if ($target.val()) {
+            _this.$fileBlock.addClass(_helpers.css.active);
+            $nameField.text(fileName);
+          }
+        });
+
+        $removeBtn.on('click', function () {
+          $input.replaceWith($input.val('').clone(true));
+          _this.$fileBlock.removeClass(_helpers.css.active);
+          $nameField.text('');
+        });
       });
     }
   }, {
