@@ -57,6 +57,12 @@
       overflow: hidden
       +xs
          bottom: 45px
+
+      a
+         display: block
+         flex: 0
+         &.is-disabled
+            pointer-events: none
          
       #{$parent}_yoga &
          +xs
@@ -241,9 +247,11 @@
             margin-right: 30px
          +sm
             max-width: 280px
-            margin: -42px auto 0
+            margin-top: -42px
+            margin-right: 25px
          +xs
-            margin: 25px auto 0
+            margin-top: 25px
+            margin-right: 50px
    
    &__logo-link
       align-self: center
@@ -473,6 +481,7 @@
             display: none
             
    &__btn
+      pointer-events: auto
 
 .about
    height: 1104px

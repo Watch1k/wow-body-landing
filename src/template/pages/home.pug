@@ -13,12 +13,13 @@ block main
 			+b.program-card._mom.is-disabled
 				+e.mask.decor-mask
 				+e.inner
-					+e.IMG.img(src='static/img/bg/product_mom.png' alt='image')
-					+e.back-title MOM
-					+e.content
-						+e.A.logo-link(href='#!')
-							+e.IMG(src='static/img/logo/wow-mom.png' width='216' height='25' alt='image')
-						p Твой гид по здоровой и красивой беременности!
+					a(href='#!')
+						+e.IMG.img(src='static/img/bg/product_mom.png' alt='image')
+						+e.back-title MOM
+						+e.content
+							+e.DIV.logo-link
+								+e.IMG(src='static/img/logo/wow-mom.png' width='216' height='25' alt='image')
+							p Твой гид по здоровой и красивой беременности!
 					+social('_white program-card__socials', 'fb', 'inst')
 				+e.info
 					+e.info-content
@@ -43,12 +44,13 @@ block main
 			+b.program-card._slim.is-disabled
 				+e.mask.decor-mask
 				+e.inner
-					+e.IMG.img(src='static/img/bg/product_slim.png' alt='image')
-					+e.back-title SLIM
-					+e.content
-						+e.A.logo-link(href='#!')
-							+e.IMG(src='static/img/logo/wow-slim.png' width='212' height='25' alt='image')
-						p Тренировки, питание,  советы и мотивация. 84 дня новой жизни.
+					a(href='#!')
+						+e.IMG.img(src='static/img/bg/product_slim.png' alt='image')
+						+e.back-title SLIM
+						+e.content
+							+e.DIV.logo-link
+								+e.IMG(src='static/img/logo/wow-slim.png' width='212' height='25' alt='image')
+							p Тренировки, питание,  советы и мотивация. 84 дня новой жизни.
 					+social('_white program-card__socials', 'fb', 'inst')
 				+e.info
 					+e.info-content
@@ -74,12 +76,13 @@ block main
 			+b.program-card._strong.is-disabled
 				+e.mask.decor-mask
 				+e.inner
-					+e.IMG.img(src='static/img/bg/product_strong.png' alt='image')
-					+e.back-title STRONG
-					+e.content
-						+e.A.logo-link(href='#!')
-							+e.IMG(src='static/img/logo/wow-strong.png' width='244' height='25' alt='image')
-						p Cоздание рельефного тела, плоского живота и тонкой талии
+					a(href='#!')
+						+e.IMG.img(src='static/img/bg/product_strong.png' alt='image')
+						+e.back-title STRONG
+						+e.content
+							+e.DIV.logo-link
+								+e.IMG(src='static/img/logo/wow-strong.png' width='244' height='25' alt='image')
+							p Cоздание рельефного тела, плоского живота и тонкой талии
 					+social('_white program-card__socials', 'fb', 'inst')
 				+e.info
 					+e.info-content
@@ -105,12 +108,13 @@ block main
 			+b.program-card._heavy.is-disabled
 				+e.mask.decor-mask
 				+e.inner
-					+e.IMG.img(src='static/img/bg/product_heavy.png' alt='image')
-					+e.back-title HEAVY
-					+e.content
-						+e.A.logo-link(href='#!')
-							+e.IMG(src='static/img/logo/wow-heavy.png' width='211' height='24' alt='image')
-						p Продвинутый уровень для сильных телом и духом.
+					a(href='#!')
+						+e.IMG.img(src='static/img/bg/product_heavy.png' alt='image')
+						+e.back-title HEAVY
+						+e.content
+							+e.DIV.logo-link
+								+e.IMG(src='static/img/logo/wow-heavy.png' width='211' height='24' alt='image')
+							p Продвинутый уровень для сильных телом и духом.
 					+social('_white program-card__socials', 'fb', 'inst')
 				+e.info
 					+e.info-content
@@ -136,12 +140,13 @@ block main
 			+b.program-card._men.is-disabled
 				+e.mask.decor-mask
 				+e.inner
-					+e.IMG.img(src='static/img/bg/product_men.png' alt='image')
-					+e.back-title MEN
-					+e.content
-						+e.A.logo-link(href='#!')
-							+e.IMG(src='static/img/logo/wow-men.png' width='201' height='25' alt='image')
-						p Домашний фитнес для мужчин – твой путь к супертелу
+					a(href='#!')
+						+e.IMG.img(src='static/img/bg/product_men.png' alt='image')
+						+e.back-title MEN
+						+e.content
+							+e.DIV.logo-link
+								+e.IMG(src='static/img/logo/wow-men.png' width='201' height='25' alt='image')
+							p Домашний фитнес для мужчин – твой путь к супертелу
 					+social('_white program-card__socials', 'fb', 'inst')
 				+e.info
 					+e.info-content
@@ -166,13 +171,14 @@ block main
 			+b.program-card._yoga.is-disabled
 				+e.mask.decor-mask
 				+e.inner
-					+e.IMG.img(src='static/img/bg/product_yoga.png' alt='image')
-					+e.back-title YOGA
-					+e.content
-						+e.A.logo-link.is-disabled(href='#!')
-							+e.IMG(src='static/img/logo/wow-yoga.png' width='216' height='25' alt='image')
-						+e.A.btn.btn._md._white(data-popup-target='inform-popup' href='#!')
-							span сообщить о запуске
+					a.is-disabled(href='#!')
+						+e.IMG.img(src='static/img/bg/product_yoga.png' alt='image')
+						+e.back-title YOGA
+						+e.content
+							+e.DIV.logo-link
+								+e.IMG(src='static/img/logo/wow-yoga.png' width='216' height='25' alt='image')
+							+e.DIV.btn.btn._md._white(data-popup-target='inform-popup')
+								span сообщить о запуске
 					+social('_white program-card__socials', 'fb', 'inst')
 
 			//Плитки могут создаваться/скрываться. При нечетном кол-ве - остается пустой квадрат справа
